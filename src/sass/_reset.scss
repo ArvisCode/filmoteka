@@ -1,0 +1,84 @@
+========== Fonts
+
+font-family: 'Roboto', sans-serif;
+
+========== Variables
+
+:root{
+--main-text-color: #000000;
+--second-text-color:#8C8C8C;
+--white-text-color: #FFFFFF;
+--main-bg-color: #ffffff;
+--second-bg-color:#F7F7F7;
+--header-bg-color: rgba(0, 0, 0, 0.56);
+--accent-color: #FF6B08;
+
+--hover-animation: 300ms cubic-bezier(.38,.53,.8,.71);
+}
+
+========== Brakepoints
+
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1024px;
+
+========== Reset
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+
+========== Body
+
+body{
+font-family: 'Roboto', sans-serif;
+color: var(--main-text);
+background-color: var(--main-bg-color);
+}
+
+========== Container
+
+.container {
+padding: 0 20px;
+margin: 0 auto;
+max-width: $mobile;
+
+  @media screen and (min-width: $tablet) {
+  max-width: $tablet;
+  padding: 0 75px;
+  }
+
+  @media screen and (min-width: $desktop) {
+  max-width: $desktop;
+  padding: 0 70px;
+  }
+}
+
+========== Section
+
+.section {
+padding: 60px 0 60px 0;
+}
