@@ -1,0 +1,100 @@
+.footer {
+  background-color: var(--second-bg-color);
+}
+
+.footer-copyright {
+  padding-top: 30px;
+  padding-bottom: 28px;
+
+  color: #545454;
+
+  justify-content: center;
+  text-align: center;
+  // align-items: center;
+
+  @media screen and (max-width: 767px) {
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.18;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    font-size: 16px;
+    line-height: 1.14;
+  }
+}
+
+.footer-copyright--right {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 10px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-left: 3px;
+  }
+}
+
+.footer-copyright--text {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+//!============ btn GoIT Students
+.footer-copyright--btn {
+  color: #545454;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration-line: underline;
+}
+
+//!============ heart
+.heart {
+  animation: heartbeat 1s infinite;
+  background-color: var(--accent-color);
+  display: inline-block;
+  height: 10px;
+  margin: 0 10px;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 10px;
+
+  &:before,
+  &:after {
+    content: '';
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+  }
+
+  &:before {
+    top: -5px;
+    left: 0;
+  }
+
+  &:after {
+    left: 5px;
+    top: 0;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1) rotate(-45deg);
+  }
+  20% {
+    transform: scale(1.1) rotate(-45deg);
+  }
+  40% {
+    transform: scale(1.2) rotate(-45deg);
+  }
+}
