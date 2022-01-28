@@ -10,6 +10,7 @@
   opacity: 1;
 
   transition: opacity var(--hover-animation);
+  overflow-y: auto;
 
   &.is-hidden {
     opacity: 0;
@@ -23,9 +24,67 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  padding: 10px 20px 40px 20px;
+  padding: 50px 20px 40px 20px;
   width: 280px;
-  height: 500px;
 
   background-color: var(--main-bg-color);
+}
+
+.modal__button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.modal__icon {
+}
+
+// Preview
+
+.preview {
+}
+
+.preview__images {
+  width: 240px;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 30px;
+  }
+}
+
+.preview__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.15;
+
+  margin-bottom: 20px;
+}
+
+.preview__characteristics {
+}
+
+.preview__point {
+}
+
+.preview__property {
+}
+
+.preview__value {
+  &--accent {
+  }
+}
+
+.preview__subtitle {
+}
+
+.preview__description {
+}
+
+.preview__list {
+}
+
+.preview__item {
+}
+
+.preview__button {
 }
