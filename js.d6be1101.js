@@ -5,4 +5,4 @@ const e={openModalBtn:document.querySelector("[data-open]"),closeModalBtn:docume
 },{}],"QvaY":[function(require,module,exports) {
 "use strict";require("../sass/main.scss"),require("./modal-window/index");
 },{"../sass/main.scss":"clu1","./modal-window/index":"znbc"}]},{},["QvaY"], null)
-//# sourceMappingURL=/filmoteka/js.acbcf443.js.map
+//# sourceMappingURL=/filmoteka/js.d6be1101.js.map
