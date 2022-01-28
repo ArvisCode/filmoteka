@@ -97,23 +97,12 @@ margin-bottom: 20px;
       width: 100%;
     }
     @media screen and (min-width: 1024px) {
-      height: 398px;
       width: 100%;
     }
   }
 
   .movie-card {
-    @media screen and (min-width: 768px) {
-      & .movie-info-list {
-        padding-left: 5px;
-      }
-
-      .movie-info-title {
-        padding-left: 5px;
-      }
-
-     
-    }
+    
 
     border-radius: 5px;
     
@@ -151,6 +140,7 @@ margin-left: 10px;
     padding-left: 5px;
 }
   .movie-info-title {
+    padding-left: 5px;
     font-style: 500;
     font-size: 12px;
     line-height: 1.2;
@@ -171,7 +161,7 @@ width: 40px;
 
 }
   .info-item {
-   
+   padding-left: 5px;
     font-size: 12px;
     line-height: 1.3;
     font-style: 500;
