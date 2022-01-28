@@ -1,0 +1,31 @@
+ {{#each this}}
+<li class="movie-card__item">
+     <a class="movie-card__link" href="" id="{{id}}">
+         <div class="movie-card">
+            <img src="{{poster_path}}" alt="{{title}}" loading="lazy" />
+            <div class="movie-card__thumb">
+                <h2 class="movie-info-title">
+                    {{title}}
+                </h2>
+            <div class="movie-info-list">
+              <p class="info-item">
+                {{genres.name}}
+              </p>
+              <p class="info-item year">
+                
+                {{release_date}}
+              </p>
+              <span class="info-item-language">
+              
+                {{original_language}}
+              </span>
+              <p class="info-item">
+                
+                {{vote_average}}
+              </p>
+            </div>
+            </div>
+            </div>
+            </a>
+        </li>
+ {{/each}} 
