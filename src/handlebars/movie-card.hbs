@@ -2,28 +2,32 @@
 <li class="movie-card__item">
      <a class="movie-card__link" href="" id="{{id}}">
          <div class="movie-card">
-            <img src="{{poster_path}}" alt="{{title}}" loading="lazy" />
+            <img src="{{poster_path}}" alt="{{title}}" class="movie-card__poster" loading="lazy" />
             <div class="movie-card__thumb">
-                <h2 class="movie-info-title">
+                <h2 class="movie-info-title">TITLE
                     {{title}}
                 </h2>
             <div class="movie-info-list">
-              <p class="info-item">
-                {{genres.name}}
+              <p class="info-item">genres
+                {{movie.genres.ids}} 
               </p>
-              <p class="info-item year">
+              <span>&#127871;</span>
+              <p class="info-item-year">year
                 
                 {{release_date}}
               </p>
-              <span class="info-item-language">
+              </div>
+              <div class="right-thumb">
+              <span class="info-item-language">lang
               
                 {{original_language}}
               </span>
-              <p class="info-item">
+              <p class="info-item-rating"><span>&#9733;</span>info
                 
                 {{vote_average}}
               </p>
-            </div>
+              </div>
+            
             </div>
             </div>
             </a>
