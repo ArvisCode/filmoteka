@@ -69,4 +69,4 @@ module.exports=require("./lib/axios");
 },{"axios":"dZBD"}],"QvaY":[function(require,module,exports) {
 "use strict";require("../sass/main.scss"),require("./modal-window/index");var e=l(require("./fetch"));function l(e){return e&&e.__esModule?e:{default:e}}let s=2;const t=()=>{(0,e.default)(s).then(e=>{0===e.results.length&&console.log("null result"),e.results.forEach(e=>{console.log(e.title,e.id)})}).catch(e=>console.log(e))};(0,e.default)(s).then(e=>{0===e.results.length&&console.log("null result"),e.results.forEach(e=>{console.log(e.title,e.id)})}).catch(e=>console.log(e));
 },{"../sass/main.scss":"clu1","./modal-window/index":"znbc","./fetch":"spyz"}]},{},["QvaY"], null)
-//# sourceMappingURL=/filmoteka/js.26d95067.js.map
+//# sourceMappingURL=/filmoteka/js.752f1f16.js.map
