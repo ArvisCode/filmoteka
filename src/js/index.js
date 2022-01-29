@@ -1,11 +1,11 @@
 import '../sass/main.scss';
-import './modal-window/index';
+//import './modal-window/index';
 import fetch from './fetch';
 import Pagination from 'tui-pagination';
 
 // import movieCard from '../handlebars/movie-card.hbs'
 
-import renderMarkupMovieCard from './movie-card'
+import renderMarkupMovieCard from './movie-card';
 let page = 2;
 const gallery = document.querySelector('.movie-card__list');
 const fetchPopularMoviesList = () => {
@@ -28,7 +28,6 @@ fetchPopularMoviesList(page);
 // const options = {
 // };
 // const pagination = new Pagination(container, options);
-
 
 // function renderMarkupMovieCard(data) {
 //   gallery.insertAdjacentHTML('beforeend', movieCard(data));

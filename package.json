@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "axios": "^0.25.0",
+    "pagination": "^0.4.6",
     "tui-pagination": "^3.4.1"
   }
 }
