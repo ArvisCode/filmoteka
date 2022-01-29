@@ -4,13 +4,13 @@ $gradient: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
 	font-style: normal;
 	font-weight: 500;
 	padding-top: 45px;
-	padding-bottom: 95px;
 
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
 .header--home {
+	padding-bottom: 95px;
 	background-image: $gradient, url(/images/header-d-1x.jpg);
 
 	@media screen and(min-width:$mobile) {
@@ -34,6 +34,7 @@ $gradient: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
 }
 
 .header--library {
+	padding-bottom: 65px;
 	background-image: $gradient, url(/images/header-red-d-1x.jpg);
 
 	@media screen and(min-width:$mobile) {
@@ -147,6 +148,7 @@ $gradient: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
 .search-field__input {
 	cursor: pointer;
 	width: 100%;
+	color: var(--white-text-color);
 
 	background-color: inherit;
 	border: inherit;
@@ -183,7 +185,7 @@ $gradient: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
 	text-transform: uppercase;
 	color: var(--white-text-color);
 	padding: 0;
-	width: 136px;
+	width: 130px;
 	height: 44px;
 
 	border: 1px solid #ffffff;
@@ -192,7 +194,8 @@ $gradient: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
 
 	filter: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
 	@media screen and (min-width: $tablet) {
-		padding: 14px 38px 12px 38px;
+		width: 136px;
+		height: 44px;
 	}
 	&:not(:first-child) {
 		margin-left: 20px;
