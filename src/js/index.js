@@ -3,6 +3,8 @@ import '../sass/main.scss';
 import fetch from './fetch';
 import Pagination from 'tui-pagination';
 
+import genres from '../data/genres';
+
 // import movieCard from '../handlebars/movie-card.hbs'
 
 import renderMarkupMovieCard from './movie-card';
@@ -28,6 +30,19 @@ fetchPopularMoviesList(page);
 // const options = {
 // };
 // const pagination = new Pagination(container, options);
+
+
+const genresArr = [];
+
+genres.forEach((genre) => {
+  if (genre.name) {
+    genresArr.push(genre.name);
+  }
+});
+
+const genre2 = genresArr.slice(0, 2);
+const genreStr = genre2.toString();
+const firstTwo = genreStr.split("");
 
 // function renderMarkupMovieCard(data) {
 //   gallery.insertAdjacentHTML('beforeend', movieCard(data));
