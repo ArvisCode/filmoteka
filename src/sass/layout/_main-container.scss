@@ -56,15 +56,7 @@ margin-bottom: 20px;
     flex-basis: calc((100% - 90px) / 3);
     position: relative;
   }
-  &:hover,
-  &:focus {
-    @media screen and (min-width: 768px) {
-      // padding-bottom: 10px;
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 107, 8, 0.2);
-    }
- 
-  }
+  
 }
   a {
     text-decoration: none;
@@ -92,6 +84,15 @@ margin-bottom: 20px;
     border-radius: 5px;
     filter: drop-shadow(1px 1px 1px rgba(55%, 55%, 55%, 0.6));
     box-shadow: 0 0 10px rgba(55%, 55%, 55%, 0.5);
+    &:hover,
+    &:focus {
+      @media screen and (min-width: 768px) {
+        // padding-bottom: 10px;
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255, 107, 8, 0.2);
+      }
+
+    }
   }
 
   .movie-card {
