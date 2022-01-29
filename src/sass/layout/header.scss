@@ -1,16 +1,18 @@
 $gradient: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
-
-header {
+.header {
 	font-family: "Roboto", sans-serif;
 	font-style: normal;
 	font-weight: 500;
 	padding-top: 45px;
 	padding-bottom: 95px;
 
-	background-image: $gradient, url(/images/header-d-1x.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+}
+.header--home {
+	background-image: $gradient, url(/images/header-d-1x.jpg);
+
 	@media screen and(min-width:$mobile) {
 		background-image: $gradient, url(/images/header-m-1x.jpg);
 		@media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -31,10 +33,31 @@ header {
 	}
 }
 
+.header--library {
+	background-image: $gradient, url(/images/header-red-d-1x.jpg);
+
+	@media screen and(min-width:$mobile) {
+		background-image: $gradient, url(/images/header-red-m-1x.jpg);
+		@media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+			background-image: $gradient, url(/images/header-red-m-1x.jpg);
+		}
+	}
+	@media screen and(min-width:$tablet) {
+		background-image: $gradient, url(/images/header-red-t-1x.jpg);
+		@media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+			background-image: $gradient, url(/images/header-red-t-2x.jpg);
+		}
+	}
+	@media screen and(min-width:$desktop) {
+		background-image: $gradient, url(/images/header-red-d-1x.jpg);
+		@media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+			background-image: $gradient, url(/images/header-red-d-2x.jpg);
+		}
+	}
+}
 .container--flex {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 
 	@media screen and (min-width: $tablet) {
 		justify-content: space-between;
@@ -72,6 +95,12 @@ header {
 .navigation {
 	display: flex;
 	align-items: flex-end;
+	@media screen and (max-width: $tablet) {
+		margin-left: 110px;
+	}
+	@media screen and (min-width: $tablet) {
+		margin-left: 305px;
+	}
 	@media screen and (min-width: $desktop) {
 		margin-left: 565px;
 	}
@@ -114,6 +143,7 @@ header {
 	margin-right: auto;
 	margin-left: auto;
 }
+
 .search-field__input {
 	cursor: pointer;
 	width: 100%;
@@ -134,4 +164,46 @@ header {
 	position: absolute;
 	top: 3px;
 	right: 3px;
+}
+.library-btns-container {
+	display: flex;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.on-library-none {
+	display: none;
+}
+.on-home-none {
+	display: none;
+}
+
+.library-btn {
+	cursor: pointer;
+	text-transform: uppercase;
+	color: var(--white-text-color);
+	padding: 0;
+	width: 136px;
+	height: 44px;
+
+	border: 1px solid #ffffff;
+	border-radius: 5px;
+	background-color: inherit;
+
+	filter: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
+	@media screen and (min-width: $tablet) {
+		padding: 14px 38px 12px 38px;
+	}
+	&:not(:first-child) {
+		margin-left: 20px;
+		@media screen and (min-width: $tablet) {
+			margin-left: 15px;
+		}
+	}
+}
+
+.library-btn--current {
+	border-color: var(--accent-color);
+	background-color: var(--accent-color);
+	box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
 }
