@@ -6,5 +6,8 @@
 // Стили для файла с примером HTML-фрагмента
 @import './example';
 @import './reset';
+@import './layout/header.scss';
+@import './layout/main-container.scss';
+@import './layout/footer.scss';
 @import './layout/modal-window';
 @import './layout/footer';
