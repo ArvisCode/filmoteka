@@ -74,4 +74,4 @@ var t;!function(e,n){"object"==typeof exports&&"object"==typeof module?module.ex
 },{}],"QvaY":[function(require,module,exports) {
 "use strict";require("../sass/main.scss");var e=l(require("./fetch")),t=l(require("tui-pagination")),s=l(require("../data/genres")),r=l(require("./movie-card"));function l(e){return e&&e.__esModule?e:{default:e}}let n=2;const o=document.querySelector(".movie-card__list"),u=()=>{(0,e.default)(n).then(e=>{0===e.results.length&&console.log("null result"),e.results.forEach(e=>{e.genre_ids=c(e.genre_ids)}),(0,r.default)(e)}).catch(e=>console.log(e))};(0,e.default)(n).then(e=>{0===e.results.length&&console.log("null result"),e.results.forEach(e=>{e.genre_ids=c(e.genre_ids)}),(0,r.default)(e)}).catch(e=>console.log(e));const c=function(e){const t=[];for(let l of e)s.default.genres.forEach(e=>{l===e.id&&t.push(e.name)});const r=t.slice(0,2);return t.length>2&&r.push("Others"),r.join(", ")};
 },{"../sass/main.scss":"clu1","./fetch":"spyz","tui-pagination":"jPMh","../data/genres":"ZDGp","./movie-card":"fDW4"}]},{},["QvaY"], null)
-//# sourceMappingURL=/filmoteka/js.d4aba620.js.map
+//# sourceMappingURL=/filmoteka/js.5979d6f7.js.map
