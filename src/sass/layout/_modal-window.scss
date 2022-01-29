@@ -168,4 +168,15 @@
 }
 
 .preview__button {
+  @extend %button;
+  width: 112px;
+  height: 44px;
+
+  @media screen and (min-width: $tablet) {
+    width: 125px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 136px;
+  }
 }
