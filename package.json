@@ -26,6 +26,7 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "axios": "^0.25.0"
+    "axios": "^0.25.0",
+    "tui-pagination": "^3.4.1"
   }
 }
