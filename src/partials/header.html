@@ -1,4 +1,4 @@
-<header>
+<header class="header header--home">
 	<div class="container container--flex">
 
 		<button class="logo" type="button">
@@ -8,15 +8,27 @@
 			<span class="logo__text">Filmoteka</span>
 		</button>
 		<ul class="navigation">
-			<li class="navigatioon__item"><button class="navigation__btn navigation__btn--current">home</button></li>
-			<li class="navigatioon__item"><button class="navigation__btn">my library</button></li>
+			<li class="navigatioon__item">
+				<button id="home-btn" class="navigation__btn home-btn navigation__btn--current">home
+				</button>
+			</li>
+			<li class="navigatioon__item">
+				<button id="library-btn" class="navigation__btn ">my library
+				</button>
+			</li>
 		</ul>
 
-		<div class="search-field">
-			<input class="search-field__input" type="text" placeholder="Поиск фильмов">
+		<div class="search-field ">
+			<input class="search-field__input js-input-search" type="text" placeholder="Поиск фильмов">
 			<svg class="search-field__svg" width="12" height="12">
 				<use href="/images/sprite.svg#search"></use>
 			</svg>
 		</div>
+
+		<div class="library-btns-container on-home-none">
+			<button id="watched-btn" class="library-btn library-btn--current" type="button">Watched</button>
+			<button id="queue-btn" class="library-btn" type="button">queue</button>
+		</div>
+
 	</div>
 </header>
