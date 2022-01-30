@@ -21,20 +21,22 @@ function handleInputSearch(e) {
     return;
   }
 
-  fetchQuery(searchQuery, pageNumber).then(response => {
-    if (response.total_pages === 0) {
-      // console.log('There are nothing');
-      Notiflix.Notify.failure(
-        'Search result not successful. Enter the correct movie name and try again',
-      );
-      return;
-    }
-    movieCardList.innerHTML = '';
-    response.results.forEach(movie => {
-      movie.genre_ids = get_genres_names(movie.genre_ids);
-    });
-    renderMarkupMovieCard(response);
-  });
+  fetchQuery(searchQuery, pageNumber)
+    .then(response => {
+      if (response.total_pages === 0) {
+        // console.log('There are nothing');
+        Notiflix.Notify.failure(
+          'Search result not successful. Enter the correct movie name and try again',
+        );
+        return;
+      }
+      movieCardList.innerHTML = '';
+      response.results.forEach(movie => {
+        movie.genre_ids = GetGenresNames(movie.genre_ids);
+      });
+      renderMarkupMovieCard(response);
+    })
+    .catch(err => console.log(err));
 }
 
 async function fetchQuery(searchQuery, pageNumber) {
@@ -44,7 +46,7 @@ async function fetchQuery(searchQuery, pageNumber) {
   return response.json();
 }
 
-const get_genres_names = function (genre_ids) {
+const GetGenresNames = function (genre_ids) {
   const genresNames = [];
   for (let genre_id of genre_ids) {
     genres.genres.forEach(genre => {
