@@ -1,5 +1,5 @@
 import '../sass/main.scss';
-//import './modal-window/index';
+import './modal/modal';
 import fetch from './fetch';
 import header from './header';
 import Pagination from 'tui-pagination';
