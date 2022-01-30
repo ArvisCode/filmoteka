@@ -1,0 +1,40 @@
+@keyframes spinner {
+  100% {
+    transform: rotate(3600deg);
+  }
+}
+.loading-container {
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  top: 50vh;
+  right: 50vw;
+  transform: translateY(-50%);
+  display: none;
+}
+.spinner {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: url('../images/spinner.png') center center;
+  background-size: contain;
+  transition-origin: 50% 50%;
+  animation: spinner 3s infinite alternate ease-in-out;
+}
+.spinner-center {
+  display: inline-block;
+  position: relative;
+  margin-left: -200px;
+  width: 200px;
+  height: 200px;
+  background: url('http://i.imgur.com/u0BC2ZR.png') center center;
+  background-size: contain;
+  content: '';
+}
+.loading-text {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5rem;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin-left: 0.5em;
+}
