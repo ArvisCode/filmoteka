@@ -1,4 +1,4 @@
-/* const refs = {
+const refs = {
 	openModalBtn: document.querySelector('[data-open]'),
 	closeModalBtn: document.querySelector('[data-close]'),
 	backdrop: document.querySelector('.backdrop'),
@@ -28,4 +28,4 @@ function onPressESC(e) {
 	if (e.code === 'Escape') {
 		onCloseModal();
 	}
-} */
+}
