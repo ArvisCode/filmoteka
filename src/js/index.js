@@ -4,8 +4,11 @@ import fetch from './fetch';
 import header from './header';
 import Pagination from 'tui-pagination';
 
-import genres from '../data/genres';
+import genres from './DATA/genres';
+import { getGenresNames } from './getGenresName';
+import scrollTop from './scrollToTop'
 import './input-search';
+import { spinner, startSpinner, hideLoader } from './spinner';
 // import movieCard from '../handlebars/movie-card.hbs'
 
 import renderMarkupMovieCard from './movie-card';
@@ -21,7 +24,7 @@ const fetchPopularMoviesList = () => {
 			//   console.log(movie.title, movie.id);
 			// });
 			res.results.forEach(movie => {
-				movie.genre_ids = get_genres_names(movie.genre_ids);
+				movie.genre_ids = getGenresNames(movie.genre_ids);
 			});
 			renderMarkupMovieCard(res);
 		})
@@ -35,22 +38,7 @@ fetchPopularMoviesList(page);
 // };
 // const pagination = new Pagination(container, options);
 
-const get_genres_names = function (genre_ids) {
 
-	const genresNames = [];
-	for (let genre_id of genre_ids) {
-		genres.genres.forEach((genre) => {
-			if (genre_id === genre.id) {
-				genresNames.push(genre.name);
-			}
-		});
-	}
-	const genre2 = genresNames.slice(0, 2);
-	if (genresNames.length > 2) {
-		genre2.push('Others');
-	}
-	return genre2.join(', ');
-}
 
 
 // function renderMarkupMovieCard(data) {

@@ -1,7 +1,8 @@
 import debounce from 'lodash.debounce';
 import renderMarkupMovieCard from './movie-card';
-import genres from '../data/genres';
+import genres from './DATA/genres';
 import Notiflix from 'notiflix';
+import { spinner, startSpinner, hideLoader } from './spinner';
 
 const inputEl = document.querySelector('.search-field__input');
 const movieCardList = document.querySelector('.movie-card__list');
@@ -10,7 +11,8 @@ const DEBOUNCE_DELAY = 300;
 let pageNumber = null;
 inputEl.addEventListener('input', debounce(handleInputSearch, DEBOUNCE_DELAY));
 
-function handleInputSearch(e) {
+async function handleInputSearch(e) {
+  await startSpinner();
   const searchQuery = e.target.value.trim();
   console.log(searchQuery);
 
@@ -18,6 +20,7 @@ function handleInputSearch(e) {
 
   if (searchQuery === '') {
     // galleryEl.innerHTML = '';
+    hideLoader();
     return;
   }
 
@@ -28,6 +31,7 @@ function handleInputSearch(e) {
         Notiflix.Notify.failure(
           'Search result not successful. Enter the correct movie name and try again',
         );
+        hideLoader();
         return;
       }
       movieCardList.innerHTML = '';
@@ -35,6 +39,7 @@ function handleInputSearch(e) {
         movie.genre_ids = GetGenresNames(movie.genre_ids);
       });
       renderMarkupMovieCard(response);
+      hideLoader();
     })
     .catch(err => console.log(err));
 }
