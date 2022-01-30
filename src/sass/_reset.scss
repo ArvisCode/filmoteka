@@ -57,18 +57,18 @@ body {
 //========== Container
 
 .container {
-  padding: 0 20px;
+  padding: 20px;
   margin: 0 auto;
   max-width: $mobile;
 
   @media screen and (min-width: $tablet) {
     max-width: $tablet;
-    padding: 0 75px;
+    padding: 60px 75px;
   }
 
   @media screen and (min-width: $desktop) {
     max-width: $desktop;
-    padding: 0 70px;
+    padding: 60px 70px;
   }
 }
 
