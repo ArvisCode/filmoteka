@@ -3,8 +3,7 @@ export default function renderMarkupMovieCard({ results }) {
   const markup = results
     .map(({ id, poster_path, original_title, genre_ids, original_language, vote_average, title, release_date }) => {
       return `
-      <li class="movie-card__item">
-          <a class="movie-card__link" href="" id="${id}">
+      <li class="movie-card__item" data="${id}">
                 <div class="movie-card">
                  ${
                   poster_path
@@ -31,7 +30,6 @@ export default function renderMarkupMovieCard({ results }) {
                     </div>
                     </div>
                 </div>
-          </a>
     </li> `;
     })
     .join("");
