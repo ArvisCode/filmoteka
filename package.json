@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "axios": "^0.25.0",
+    "notiflix": "^3.2.4",
     "pagination": "^0.4.6",
     "tui-pagination": "^3.4.1"
   }

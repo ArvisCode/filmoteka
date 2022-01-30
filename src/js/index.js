@@ -5,7 +5,7 @@ import header from './header';
 import Pagination from 'tui-pagination';
 
 import genres from '../data/genres';
-
+import './input-search';
 // import movieCard from '../handlebars/movie-card.hbs'
 
 import renderMarkupMovieCard from './movie-card';
@@ -51,6 +51,7 @@ const get_genres_names = function (genre_ids) {
 	}
 	return genre2.join(', ');
 }
+
 
 // function renderMarkupMovieCard(data) {
 //   gallery.insertAdjacentHTML('beforeend', movieCard(data));
