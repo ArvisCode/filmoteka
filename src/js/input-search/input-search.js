@@ -18,13 +18,13 @@ let pageNumber = 0;
 inputEl.addEventListener('input', debounce(handleInputSearch, DEBOUNCE_DELAY));
 
 async function handleInputSearch(e) {
-  // await startSpinner();
+  await startSpinner();
   const searchQuery = e.target.value.trim();
 
   pageNumber = 1;
 
   if (searchQuery === '') {
-    // hideLoader();
+    hideLoader();
     return;
   }
 
@@ -34,7 +34,7 @@ async function handleInputSearch(e) {
         Notiflix.Notify.failure(
           'Search result not successful. Enter the correct movie name and try again!',
         );
-        // hideLoader();
+        hideLoader();
         return;
       }
       movieCardList.innerHTML = '';
@@ -42,7 +42,7 @@ async function handleInputSearch(e) {
         movie.genre_ids = getGenresNames(movie.genre_ids);
       });
       renderMarkupMovieCard(response);
-      // hideLoader();
+      hideLoader();
     })
     .catch(err => console.log(err));
 }
