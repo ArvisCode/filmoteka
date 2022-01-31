@@ -1,6 +1,6 @@
 import '../sass/main.scss';
 import './modal/modal';
-import fetch from './fetch';
+import fetch from './fetches/fetch';
 import header from './header';
 import Pagination from 'tui-pagination';
 
@@ -13,12 +13,11 @@ import movieCard from '../handlebars/movie-card.hbs';
 import renderMarkupMovieCard from './movie-card';
 import { team } from './team';
 
-let page = 2;
+let page = 1;
 
 const gallery = document.querySelector('.movie-card__list');
 
 const fetchPopularMoviesList = () => {
-
   fetch(page)
     .then(res => {
       if (res.results.length === 0) {
