@@ -1,4 +1,6 @@
 'use strict';
+import { fetchPopularMoviesList } from './index';
+import { myLibraryPage } from './myLibraryPage'
 
 const refs = {
 	header: document.querySelector('.header'),
@@ -19,9 +21,11 @@ refs.queueBtn.addEventListener('click', onQueueBtnClick);
 
 function onLibraryBtnClick() {
 	headerRender()
+	myLibraryPage();
 }
 function onHomeBtnClick() {
 	headerRender()
+fetchPopularMoviesList();
 }
 function headerRender() {
 	if (refs.header.classList.contains('header--home')) {
