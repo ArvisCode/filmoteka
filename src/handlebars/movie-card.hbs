@@ -1,28 +1,24 @@
  {{#each this}}
-<li class="movie-card__item">
-     <a class="movie-card__link" href="" id="{{id}}">
+<li class="movie-card__item" data-id="{{id}}">
          <div class="movie-card">
-            <img src="{{poster_path}}" alt="{{title}}" class="movie-card__poster" loading="lazy" />
-            <div class="movie-card__thumb">
-                <h2 class="movie-info-title">TITLE
-                    {{title}}
-                </h2>
+            <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{original_title}}" class="movie-card__poster" loading="lazy" width="305" height="205"/>
+            <h2 class="movie-info-title"> {{original_title}} </h2>
+            <div class="movie-card__thumb">   
             <div class="movie-info-list">
-              <p class="info-item">genres
-                {{movie.genres.ids}} 
+              <p class="info-item">
+                {{genre_ids}} 
               </p>
               <span>&#127871;</span>
-              <p class="info-item-year">year
-                
+              <p class="info-item-year">
                 {{release_date}}
               </p>
               </div>
-              <div class="right-thumb">
-              <span class="info-item-language">lang
+              <div class="second-thumb">
+              <span class="info-item-language">
               
                 {{original_language}}
               </span>
-              <p class="info-item-rating"><span>&#9733;</span>info
+              <p class="info-item-rating"><span>&#9733;</span>
                 
                 {{vote_average}}
               </p>
@@ -30,6 +26,6 @@
             
             </div>
             </div>
-            </a>
+           
         </li>
  {{/each}} 
