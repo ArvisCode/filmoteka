@@ -23,7 +23,6 @@ const fetchPopularMoviesList = () => {
       if (res.results.length === 0) {
         console.log('null result');
       }
-gallery.innerHTML = ''
       res.results.forEach(movie => {
         movie.genre_ids = getGenresNames(movie.genre_ids);
       });
@@ -43,4 +42,3 @@ fetchPopularMoviesList(page);
 // function renderMarkupMovieCard(data) {
 //   gallery.insertAdjacentHTML('beforeend', movieCard(data));
 // }
-export {fetchPopularMoviesList}
