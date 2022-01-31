@@ -2,7 +2,7 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import previewTemplate from '../../handlebars/preview-template.hbs';
 import fetchById from './fetch-by-id';
-
+import { onWatchedClick } from '../buttonWatched';
 const movieList = document.querySelector('.movie-card__list');
 movieList.addEventListener('click', onClickList);
 
@@ -32,4 +32,7 @@ function modal(data) {
       window.removeEventListener('keydown', onPressKeyESC);
     }
   }
+  const watched = modal.element().querySelector('.preview__button');
+  watched.addEventListener('click', () => onWatchedClick(data), { once: true });
 }
+
