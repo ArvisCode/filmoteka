@@ -24,9 +24,7 @@ margin-bottom: 20px;
     flex-basis: calc((100% - 60px) / 2);
     position: relative;
     margin-bottom: 0px;
-  &:last-child {
-    margin-bottom: 20px;
-}
+ 
       }
 @media screen and (min-width: $desktop) {
     margin-top: 30px;
@@ -45,9 +43,7 @@ margin-bottom: 20px;
   }
 }
 // ====================
-  // .movie-card___link {
-  //   display: block;
-  // }
+ 
   .movie-card {
     height: auto;
     border-radius: 5px;
