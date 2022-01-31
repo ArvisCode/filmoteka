@@ -11,6 +11,7 @@ import { spinner, startSpinner, hideLoader } from './spinner';
 import movieCard from '../handlebars/movie-card.hbs';
 
 import renderMarkupMovieCard from './movie-card';
+import { team } from './team';
 
 let page = 2;
 
@@ -42,3 +43,4 @@ fetchPopularMoviesList(page);
 // function renderMarkupMovieCard(data) {
 //   gallery.insertAdjacentHTML('beforeend', movieCard(data));
 // }
+console.log(team);
