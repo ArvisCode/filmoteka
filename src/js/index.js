@@ -26,14 +26,14 @@ const fetchPopularMoviesList = () => {
       res.results.forEach(movie => {
         movie.genre_ids = getGenresNames(movie.genre_ids);
       });
-
+      gallery.innerHTML = '';
       renderMarkupMovieCard(res);
     })
     .catch(err => console.log(err));
 };
 
 fetchPopularMoviesList(page);
-
+export { fetchPopularMoviesList };
 // const container = document.querySelector('tui-pagination');
 // const options = {
 // };
