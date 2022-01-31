@@ -17,12 +17,13 @@ let page = 2;
 const gallery = document.querySelector('.movie-card__list');
 
 const fetchPopularMoviesList = () => {
+
   fetch(page)
     .then(res => {
       if (res.results.length === 0) {
         console.log('null result');
       }
-
+gallery.innerHTML = ''
       res.results.forEach(movie => {
         movie.genre_ids = getGenresNames(movie.genre_ids);
       });
@@ -42,3 +43,4 @@ fetchPopularMoviesList(page);
 // function renderMarkupMovieCard(data) {
 //   gallery.insertAdjacentHTML('beforeend', movieCard(data));
 // }
+export {fetchPopularMoviesList}
