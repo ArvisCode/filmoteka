@@ -11,21 +11,25 @@ function onClickList(e) {
 
   fetchById(currentId)
     .then(data => {
-      const modal = basicLightbox.create(previewTemplate(data));
-      const closeBtn = modal.element().querySelector('[data-close]');
-      closeBtn.addEventListener('click', () => modal.close());
-      modal.show();
-
-      if (modal.visible) {
-        window.addEventListener('keydown', onPressKeyESC);
-      }
-
-      function onPressKeyESC(e) {
-        if (e.code === 'Escape') {
-          modal.close();
-          window.removeEventListener('keydown', onPressKeyESC);
-        }
-      }
+      modal(data);
     })
     .catch(error => console.log(error));
+}
+
+function modal(data) {
+  const modal = basicLightbox.create(previewTemplate(data));
+  const closeBtn = modal.element().querySelector('[data-close]');
+  closeBtn.addEventListener('click', () => modal.close());
+  modal.show();
+
+  if (modal.visible) {
+    window.addEventListener('keydown', onPressKeyESC);
+  }
+
+  function onPressKeyESC(e) {
+    if (e.code === 'Escape') {
+      modal.close();
+      window.removeEventListener('keydown', onPressKeyESC);
+    }
+  }
 }

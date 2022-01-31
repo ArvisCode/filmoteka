@@ -1,5 +1,10 @@
-.modal {
+.basicLightbox {
   overflow-y: auto;
+}
+
+.modal {
+  position: relative;
+  top: 100px;
 
   padding: 50px 20px 40px 20px;
   width: 280px;

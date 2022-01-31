@@ -5,11 +5,19 @@
     </svg>
   </button>
   <article class='preview'>
-    <img
-      class='preview__images'
-      src='https://image.tmdb.org/t/p/w500/{{poster_path}}'
-      alt='{{title}}'
-    />
+    {{#if poster_path}}
+      <img
+        class='preview__images'
+        src='https://image.tmdb.org/t/p/w500/{{poster_path}}'
+        alt='{{title}}'
+      />
+    {{else}}
+      <img
+        class='preview__images'
+        src='https://yt3.ggpht.com/AAKF_677TIvjFz_9xFF0R6PgiVd0kRpEtY6APSxSDRP65nXg8hkn9NFsz2bRd9_Z37DJ9D_b=s900-c-k-c0x00ffffff-no-rj'
+        alt='{{title}}'
+      />
+    {{/if}}
     <div class='preview__wrapper'>
       <h2 class='preview__title'>{{title}}</h2>
 
@@ -31,13 +39,17 @@
         </li>
         <li class='preview__point'>
           <p class='preview__property'>Genre</p>
-          <span class='preview__value'>Western</span>
+          <span class='preview__value'>{{#each genres}} {{this.name}} {{/each}}</span>
         </li>
       </ul>
 
       <!-- Film description -->
       <p class='preview__subtitle'>About</p>
-      <p class='preview__description'>{{overview}}</p>
+      {{#if overview}}
+        <p class='preview__description'>{{overview}}</p>
+      {{else}}
+        <p class='preview__description'>Unfortunately there is nothing here...😔</p>
+      {{/if}}
 
       <!-- Button List -->
       <ul class='preview__list'>
