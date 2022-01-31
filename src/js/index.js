@@ -6,7 +6,7 @@ import Pagination from 'tui-pagination';
 
 import { getGenresNames } from './getGenresName';
 import scrollTop from './scrollToTop';
-import './input-search';
+import './input-search/input-search';
 import { spinner, startSpinner, hideLoader } from './spinner';
 import movieCard from '../handlebars/movie-card.hbs';
 
