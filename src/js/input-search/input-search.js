@@ -18,15 +18,15 @@ let pageNumber = 0;
 inputEl.addEventListener('input', debounce(handleInputSearch, DEBOUNCE_DELAY));
 
 async function handleInputSearch(e) {
-  await startSpinner();
   const searchQuery = e.target.value.trim();
 
   pageNumber = 1;
 
   if (searchQuery === '') {
-    hideLoader();
     return;
   }
+
+  await startSpinner();
 
   fetchQuery(searchQuery, pageNumber)
     .then(response => {
