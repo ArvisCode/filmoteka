@@ -54,11 +54,13 @@ function modal(data) {
     };
   }
 
-  function onClickBackdrop() {
-    modal.close();
-    window.onscroll = function () {
-      window.scrollTo();
-    };
+  function onClickBackdrop(e) {
+    if (e.target === e.currentTarget) {
+      modal.close();
+      window.onscroll = function () {
+        window.scrollTo();
+      };
+    }
   }
 
   const watched = modal.element().querySelector('.watched');
