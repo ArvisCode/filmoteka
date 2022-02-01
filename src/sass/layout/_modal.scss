@@ -1,10 +1,20 @@
-.basicLightbox {
+.modal {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   overflow-y: auto;
+
+  @media screen and (max-width: 767px) {
+    align-items: flex-start;
+  }
 }
 
-.modal {
+.modal__wrapper {
   position: relative;
-
   padding: 50px 20px 40px 20px;
   width: 280px;
 
