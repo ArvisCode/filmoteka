@@ -58,10 +58,9 @@ margin-bottom: 20px;
     }
   }
   .movie-card__poster {
-    height: 398px;
-    width: 280px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     cursor: pointer;
-    border-radius: 5px;
     filter: drop-shadow(1px 1px 1px rgba(55%, 55%, 55%, 0.6));
     box-shadow: 0 0 10px rgba(55%, 55%, 55%, 0.5);
     filter: none;
