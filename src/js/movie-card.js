@@ -1,4 +1,5 @@
-export default function renderMarkupMovieCard({results}) {
+import { getGenresNames } from './getGenresName';
+export default function renderMarkupMovieCard({ results }) {
     const gallery = document.querySelector('.movie-card__list')
   const markup = results
     .map(({ id, poster_path, genre_ids, original_language, vote_average, title, release_date }) => {
