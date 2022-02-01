@@ -41,5 +41,5 @@ fetchPopularMoviesList(page);
 //(function renderMarkupMovieCard(data) {
 //  gallery.insertAdjacentHTML('beforeend', movieCard(data));
 //})();
-console.log('about team');
+console.log('About developers');
 console.log(team);
