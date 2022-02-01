@@ -1,5 +1,8 @@
 import '../sass/main.scss';
 import './modal/modal';
+import './getFromLocalStorageWatchedList';
+import './getfromLocalStorageQueueList';
+
 import header from './header';
 import scrollTop from './scrollToTop';
 import './input-search/input-search';
