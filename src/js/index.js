@@ -1,5 +1,7 @@
 import '../sass/main.scss';
 import './modal/modal';
+import './getFromLocalStorageWatchedList';
+import './getfromLocalStorageQueueList';
 import fetch from './fetches/fetch';
 import header from './header';
 import Pagination from 'tui-pagination';
@@ -20,6 +22,7 @@ const gallery = document.querySelector('.movie-card__list');
 const fetchPopularMoviesList = () => {
   fetch(page)
     .then(res => {
+      console.log(res);
       if (res.results.length === 0) {
         console.log('null result');
       }
