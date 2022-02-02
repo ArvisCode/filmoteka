@@ -4,6 +4,7 @@ import Notiflix from 'notiflix';
 import { spinner, startSpinner, hideLoader } from '../spinner';
 import { getGenresNames } from '../getGenresName';
 import { fetchQuery } from '../input-search/fetch-by-query';
+import { renderPopularMoviesList } from '../fetches/renderPopularMovieList';
 
 Notiflix.Notify.init({
   distance: '24px',
@@ -22,11 +23,13 @@ async function handleInputSearch(e) {
 
   pageNumber = 1;
 
+  await startSpinner();
+
   if (searchQuery === '') {
+    renderPopularMoviesList();
+    hideLoader();
     return;
   }
-
-  await startSpinner();
 
   fetchQuery(searchQuery, pageNumber)
     .then(response => {
