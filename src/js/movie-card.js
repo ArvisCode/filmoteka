@@ -10,7 +10,6 @@ export default function renderMarkupMovieCard({ results }) {
                   poster_path
                     ? `<img src="https://image.tmdb.org/t/p/w500${poster_path}"`
                     : `<img src="https://yt3.ggpht.com/AAKF_677TIvjFz_9xFF0R6PgiVd0kRpEtY6APSxSDRP65nXg8hkn9NFsz2bRd9_Z37DJ9D_b=s900-c-k-c0x00ffffff-no-rj"`
-                //  :`<img src="https://www.csaff.org/wp-content/uploads/csaff-no-poster.jpg"`
                  }
                         class="movie-card__poster"width="305"
                         height="205"
