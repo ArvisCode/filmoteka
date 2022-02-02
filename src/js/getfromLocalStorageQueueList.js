@@ -12,7 +12,8 @@ function getWatchedFilms () {
    
 }
 
-function render (array) {
+function render(array) {
+  gallery.classList.remove('library');  //---- возвращаем сетку после собаки
   const markup = array
     .map(({ id, poster_path, genre_ids, original_language, vote_average, title, release_date }) => {
       return `
