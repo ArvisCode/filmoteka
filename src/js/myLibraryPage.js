@@ -9,5 +9,5 @@ export function myLibraryPage() {
         <p class="library-bg__message">Don't forget to add some movie to the queue!</p>
       </div>
       </div>`
-  movieCardList.classList.replace('movie-card__list', 'library');
+  movieCardList.classList.add('library');
 }
