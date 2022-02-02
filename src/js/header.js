@@ -11,6 +11,7 @@ const refs = {
   libraryBtnsContainer: document.querySelector('.library-btns-container'),
   watchedBtn: document.querySelector('#watched-btn'),
   queueBtn: document.querySelector('#queue-btn'),
+  movieCardList:document.querySelector('.movie-card__list'),
 };
 
 refs.libraryBtn.addEventListener('click', onLibraryBtnClick);
@@ -25,6 +26,7 @@ function onLibraryBtnClick() {
 }
 function onHomeBtnClick() {
   headerRender();
+  refs.movieCardList.classList.remove('library');
   renderPopularMoviesList();
 }
 function headerRender() {
