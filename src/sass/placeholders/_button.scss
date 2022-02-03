@@ -38,33 +38,3 @@
     border-color: var(--accent-color);
   }
 }
-#button {
-  display: inline-block;
-  background-color: #24252560;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  border-radius: 4px;
-  margin: 30px;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  transition: background-color 0.3s;
-  z-index: 1000;
-}
-#button:hover {
-  cursor: pointer;
-  background-color: #737a80;
-}
-#button:active {
-  background-color: rgb(53, 52, 52);
-}
-#button::after {
-  content: '\f077';
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2em;
-  line-height: 50px;
-  color: #fff;
-}
