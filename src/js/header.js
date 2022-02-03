@@ -1,6 +1,8 @@
 'use strict';
 import { renderPopularMoviesList } from './fetches/renderPopularMovieList';
 import { myLibraryPage } from './myLibraryPage';
+import getWatchedFilms from './getFromLocalStorageWatchedList';
+import getQueueFilms from './getfromLocalStorageQueueList';
 
 const refs = {
 	header: document.querySelector('.header'),
@@ -14,6 +16,7 @@ const refs = {
 	movieCardList: document.querySelector('.movie-card__list'),
 };
 
+
 refs.libraryBtn.addEventListener('click', onLibraryBtnClick);
 refs.homeBtn.addEventListener('click', onHomeBtnClick);
 refs.logo.addEventListener('click', onHomeBtnClick);
@@ -22,7 +25,15 @@ refs.queueBtn.addEventListener('click', onQueueBtnClick);
 
 function onLibraryBtnClick() {
 	createHeaderLibrary();
+  	headerRender();
+  if (!localStorage.getItem('queueMovie') && !localStorage.getItem('movies')) {
 	myLibraryPage();
+  } else {
+	getWatchedFilms();
+	getQueueFilms();
+	 
+  }
+
 }
 
 function onHomeBtnClick() {
@@ -61,14 +72,20 @@ function createHeaderLibrary() {
 
 function onWatchedBtnClick() {
 	if (refs.queueBtn.classList.contains('library-btn--current')) {
-		refs.watchedBtn.classList.toggle('library-btn--current');
-		refs.queueBtn.classList.toggle('library-btn--current');
-	}
+    refs.watchedBtn.classList.toggle('library-btn--current');
+    refs.queueBtn.classList.toggle('library-btn--current');
+  }
+  if (!localStorage.getItem('queueMovie') && !localStorage.getItem('movies')) {
+	myLibraryPage();
+  } 
 }
 
 function onQueueBtnClick() {
-	if (refs.watchedBtn.classList.contains('library-btn--current')) {
-		refs.queueBtn.classList.toggle('library-btn--current');
-		refs.watchedBtn.classList.toggle('library-btn--current');
-	}
+  if (refs.watchedBtn.classList.contains('library-btn--current')) {
+    refs.queueBtn.classList.toggle('library-btn--current');
+    refs.watchedBtn.classList.toggle('library-btn--current');
+  }
+  if (!localStorage.getItem('queueMovie') && !localStorage.getItem('movies')) {
+	myLibraryPage();
+  }
 }
