@@ -25,13 +25,10 @@ refs.queueBtn.addEventListener('click', onQueueBtnClick);
 
 function onLibraryBtnClick() {
 	createHeaderLibrary();
-  	headerRender();
-  if (!localStorage.getItem('queueMovie') && !localStorage.getItem('movies')) {
+  if (!localStorage.getItem('movies')) {
 	myLibraryPage();
   } else {
 	getWatchedFilms();
-	getQueueFilms();
-	 
   }
 
 }
@@ -75,7 +72,7 @@ function onWatchedBtnClick() {
     refs.watchedBtn.classList.toggle('library-btn--current');
     refs.queueBtn.classList.toggle('library-btn--current');
   }
-  if (!localStorage.getItem('queueMovie') && !localStorage.getItem('movies')) {
+  if (!localStorage.getItem('movies')) {
 	myLibraryPage();
   } 
 }
@@ -85,7 +82,7 @@ function onQueueBtnClick() {
     refs.queueBtn.classList.toggle('library-btn--current');
     refs.watchedBtn.classList.toggle('library-btn--current');
   }
-  if (!localStorage.getItem('queueMovie') && !localStorage.getItem('movies')) {
+  if (!localStorage.getItem('queueMovie')) {
 	myLibraryPage();
   }
 }
