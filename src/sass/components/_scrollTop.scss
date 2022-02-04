@@ -1,0 +1,30 @@
+#scrollTop {
+  display: none;
+  background-color: #24252560;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 0;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color 0.3s;
+  z-index: 1000;
+}
+#scrollTop:hover {
+  cursor: pointer;
+  background-color: #737a80;
+}
+#scrollTop:active {
+  background-color: rgb(52, 52, 52);
+}
+#scrollTop::after {
+  content: '\f077';
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
