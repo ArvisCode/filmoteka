@@ -18,7 +18,6 @@ const gallery = document.querySelector('.movie-card__list');
   } else {
     document.getElementById('scrollTop').style.right = `3px`;
   }
-  console.log(right);
 })();
 
 setInterval(function displayBtnScrollTop() {
