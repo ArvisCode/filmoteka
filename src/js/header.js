@@ -3,6 +3,8 @@ import { renderPopularMoviesList } from './fetches/renderPopularMovieList';
 import { myLibraryPage } from './myLibraryPage';
 import getWatchedFilms from './getFromLocalStorageWatchedList';
 import getQueueFilms from './getfromLocalStorageQueueList';
+import { LOCAL_STORAGE_WATCHED } from './buttonWatched';
+import { LOCAL_STORAGE_QUEUE } from './buttonWatched';
 
 const refs = {
 	header: document.querySelector('.header'),
@@ -25,12 +27,11 @@ refs.queueBtn.addEventListener('click', onQueueBtnClick);
 
 function onLibraryBtnClick() {
 	createHeaderLibrary();
-  if (!localStorage.getItem('movies')) {
+  if (!localStorage.getItem(LOCAL_STORAGE_WATCHED)) {
 	myLibraryPage();
   } else {
 	getWatchedFilms();
   }
-
 }
 
 function onHomeBtnClick() {
@@ -72,7 +73,7 @@ function onWatchedBtnClick() {
     refs.watchedBtn.classList.toggle('library-btn--current');
     refs.queueBtn.classList.toggle('library-btn--current');
   }
-  if (!localStorage.getItem('movies')) {
+  if (!localStorage.getItem(LOCAL_STORAGE_WATCHED)) {
 	myLibraryPage();
   } 
 }
@@ -82,7 +83,7 @@ function onQueueBtnClick() {
     refs.queueBtn.classList.toggle('library-btn--current');
     refs.watchedBtn.classList.toggle('library-btn--current');
   }
-  if (!localStorage.getItem('queueMovie')) {
+  if (!localStorage.getItem(LOCAL_STORAGE_QUEUE)) {
 	myLibraryPage();
   }
 }
