@@ -5,6 +5,7 @@ import './getfromLocalStorageQueueList';
 import './modal/modal-footer';
 import fetch from './fetches/fetch';
 import './pagination/pagination';
+import 'tui-pagination/dist/tui-pagination.css';
 
 
 import header from './header';
