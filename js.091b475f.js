@@ -125,4 +125,4 @@ const e=document.querySelector(".loadingSpinner"),n=document.querySelector(".bac
 },{}],"QvaY":[function(require,module,exports) {
 "use strict";require("../sass/main.scss"),require("./modal/modal"),require("./getFromLocalStorageWatchedList"),require("./getfromLocalStorageQueueList"),require("./modal/modal-footer");var e=t(require("./fetches/fetch"));require("./pagination/pagination");var r=t(require("./header")),o=t(require("./scrollToTop"));require("./input-search/input-search");var a=require("./spinner"),i=require("./team");function t(e){return e&&e.__esModule?e:{default:e}}console.log("About developers"),console.log(i.team);
 },{"../sass/main.scss":"clu1","./modal/modal":"RBo6","./getFromLocalStorageWatchedList":"Rm7B","./getfromLocalStorageQueueList":"YUKR","./modal/modal-footer":"DZ4n","./fetches/fetch":"QJkr","./pagination/pagination":"mwHV","./header":"cGsR","./scrollToTop":"bdoy","./input-search/input-search":"oxMT","./spinner":"Sc1o","./team":"ZxpD"}]},{},["QvaY"], null)
-//# sourceMappingURL=/filmoteka/js.6cc081ac.js.map
+//# sourceMappingURL=/filmoteka/js.091b475f.js.map
