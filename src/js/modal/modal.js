@@ -36,6 +36,4 @@ function modal(data) {
   watched.addEventListener('click', () => onWatchedClick(data), { once: true });
   const queue = modal.element().querySelector('.queue');
   queue.addEventListener('click', () => onQueueClick(data), { once: true });
-
 }
-
