@@ -14,8 +14,7 @@
   left: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  // opacity: 0;
-  // visibility: hidden;
+  z-index: 2;
 
   transition: opacity 250ms, visibility 250ms;
 }
@@ -142,17 +141,6 @@
     &:not(:last-child) {
       margin-bottom: 40px;
     }
-
-    // transform: translateX(10%);
-    // transition: transform 0.4s ease;
-
-    // &:nth-of-type(even) {
-    //   transform: translateX(0%);
-    // }
-
-    // &.show {
-    //   transform: translateX(0);
-    // }
   }
 
   @media screen and (min-width: $tablet) {
