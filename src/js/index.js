@@ -2,7 +2,10 @@ import '../sass/main.scss';
 import './modal/modal';
 import './getFromLocalStorageWatchedList';
 import './getfromLocalStorageQueueList';
+import './modal/modal-footer';
+import fetch from './fetches/fetch';
 import './pagination/pagination';
+
 
 import header from './header';
 import scrollTop from './scrollToTop';
