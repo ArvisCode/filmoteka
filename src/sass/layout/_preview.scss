@@ -125,3 +125,16 @@
     color: grey;
     border: 1px solid grey;
 }
+
+.btn-list-delete {
+    right: 10px;
+    position: absolute;
+    top: 10px;
+}
+
+.btn-svg-delete {
+    stroke: orange;
+    border: 2px solid;
+    border-color: orange;
+    border-radius: 50%;
+}

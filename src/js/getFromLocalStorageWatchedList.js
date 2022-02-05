@@ -16,7 +16,7 @@ export default function getWatchedFilms() {
     gallery.innerHTML = '';
     console.log(data);
     // render(data);
-    renderMarkupMovieCard({ results: data });
+    renderMarkupMovieCard({ results: data }, true);
 }
 
 // function render (array) {

@@ -11,12 +11,16 @@ movieList.addEventListener('click', onClickList);
 function onClickList(e) {
     const currentId = e.target.closest('.movie-card__item').dataset.id;
 
-    fetchById(currentId)
-        .then(data => {
-            // data.genre_ids = data.genres.map(film => film.name);
-            modal(data);
-        })
-        .catch(error => console.log(error));
+    if (e.target.id === 'close') {
+
+    } else {
+        fetchById(currentId)
+            .then(data => {
+                // data.genre_ids = data.genres.map(film => film.name);
+                modal(data);
+            })
+            .catch(error => console.log(error));
+    }
 }
 
 function modal(data) {

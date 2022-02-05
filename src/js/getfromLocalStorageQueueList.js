@@ -7,14 +7,15 @@ import { LOCAL_STORAGE_QUEUE } from './buttonWatched';
 const queueButton = document.querySelector('#queue-btn');
 const gallery = document.querySelector('.movie-card__list');
 
-queueButton.addEventListener('click',getQueueFilms);
+queueButton.addEventListener('click', getQueueFilms);
 
-export default function getQueueFilms () {
+export default function getQueueFilms() {
     const getFilms = localStorage.getItem(LOCAL_STORAGE_QUEUE);
     const data = JSON.parse(getFilms);
     gallery.innerHTML = '';
     console.log(data);
-    renderMarkupMovieCard({results: data});
+    renderMarkupMovieCard({ results: data }, true);
+    document.querySelector('.btn-list-delete').addEventListener('click', () => onQueueClick(data), { once: true })
 }
 
 // function render(array) {
