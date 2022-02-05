@@ -1,5 +1,3 @@
-import Notiflix from 'notiflix';
-
 export function getWatchedList() {
     let watchedList = JSON.parse(localStorage.getItem('movies'));
     if (watchedList === null) {
