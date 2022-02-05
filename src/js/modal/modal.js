@@ -82,49 +82,21 @@ function modal(data) {
                 window.scrollTo();
             };
         }
+    }
 
-        modal.show();
-
-        const closeBtn = modal.element().querySelector('[data-close]');
-        const backdrop = modal.element().querySelector('.modal');
-
-        backdrop.addEventListener('click', onClickBackdrop);
-        closeBtn.addEventListener('click', onCloseClickBtn);
-
-        let scrollX = window.scrollX;
-        let scrollY = window.scrollY;
+    function onCloseClickBtn() {
+        modal.close();
         window.onscroll = function() {
-            window.scrollTo(scrollX, scrollY);
+            window.scrollTo();
         };
+    }
 
-        if (modal.visible) {
-            window.addEventListener('keydown', onPressKeyESC);
-        }
-
-        function onPressKeyESC(e) {
-            if (e.code === 'Escape') {
-                modal.close();
-                window.removeEventListener('keydown', onPressKeyESC);
-                window.onscroll = function() {
-                    window.scrollTo();
-                };
-            }
-        }
-
-        function onCloseClickBtn() {
+    function onClickBackdrop(e) {
+        if (e.target === e.currentTarget) {
             modal.close();
             window.onscroll = function() {
                 window.scrollTo();
             };
-        }
-
-        function onClickBackdrop(e) {
-            if (e.target === e.currentTarget) {
-                modal.close();
-                window.onscroll = function() {
-                    window.scrollTo();
-                };
-            }
         }
     }
 }
