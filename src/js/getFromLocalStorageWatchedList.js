@@ -5,21 +5,21 @@
 const watchedButton = document.querySelector('#watched-btn');
 const gallery = document.querySelector('.movie-card__list');
 
-watchedButton.addEventListener('click',getWatchedFilms);
+watchedButton.addEventListener('click', getWatchedFilms);
 
-function getWatchedFilms () {
+function getWatchedFilms() {
     const getFilms = localStorage.getItem('movies');
     const data = JSON.parse(getFilms);
     gallery.innerHTML = '';
-    console.log(data);
+    "   console.log(data);"
     render(data);
-   
+
 }
 
-function render (array) {
-  const markup = array
-    .map(({ id, poster_path, genre_ids, original_language, vote_average, title, release_date }) => {
-      return `
+function render(array) {
+    const markup = array
+        .map(({ id, poster_path, genre_ids, original_language, vote_average, title, release_date }) => {
+                return `
       <li class="movie-card__item" data-id="${id}">
                 <div class="movie-card">
                  ${
