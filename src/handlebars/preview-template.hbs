@@ -36,7 +36,7 @@
             <p class='preview__property'>Vote / Votes</p>
             <span class='preview__value preview__value--accent'>{{vote_average}}</span>
             <span>/ </span>
-            <span class='preview__value'>{{vote_count}}</span>
+            <span class='preview__value preview__value--gray'>{{vote_count}}</span>
           </li>
           <li class='preview__point'>
             <p class='preview__property'>Popularity</p>
@@ -48,7 +48,7 @@
           </li>
           <li class='preview__point'>
             <p class='preview__property'>Genre</p>
-            <span class='preview__value'>{{#each genres}} {{this.name}} {{/each}}</span>
+            <span class='preview__value'>{{genres}}</span>
           </li>
         </ul>
 
