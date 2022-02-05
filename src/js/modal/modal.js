@@ -27,7 +27,7 @@ function modal(data) {
         genres: data.genres.map(genre => genre.name).join(', '),
     };
 
-    const modal = basicLightbox.create(previewTemplate(data),
+    const modal = basicLightbox.create(previewTemplate(updatedData),
         // { onClose: (instance) => location.reload() }
     );
 
