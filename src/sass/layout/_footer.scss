@@ -38,6 +38,10 @@
   @media screen and (min-width: $tablet) {
     margin-left: 3px;
   }
+
+  @media screen and (min-width: $desktop) {
+    position: relative;
+  }
 }
 
 .footer-copyright--text {
@@ -48,6 +52,7 @@
 
 //!============ btn GoIT Students
 .footer-copyright--btn {
+  // position: relative;
   color: #545454;
   border: none;
   cursor: pointer;
@@ -57,6 +62,64 @@
   &:hover,
   &:focus {
     color: #ff6b08;
+  }
+}
+
+.click {
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+  text-align: left;
+}
+
+.footer-copyright--btn span {
+  text-decoration-line: underline;
+  width: 103px;
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    bottom: 0px;
+    display: block;
+  }
+}
+
+.footer-copyright--btn span:nth-child(1) {
+  @media screen and (min-width: $desktop) {
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+  }
+}
+
+.footer-copyright--btn span:nth-child(2) {
+  @media screen and (min-width: $desktop) {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+  }
+}
+
+.footer-copyright--btn:hover span:nth-child(1) {
+  @media screen and (min-width: $desktop) {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+}
+
+.footer-copyright--btn:hover span:nth-child(2) {
+  @media screen and (min-width: $desktop) {
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+      4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    color: transparent;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
   }
 }
 
