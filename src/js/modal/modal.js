@@ -18,7 +18,13 @@ function onClickList(e) {
 }
 
 function modal(data) {
-  const modal = basicLightbox.create(previewTemplate(data));
+  const updatedData = {
+    ...data,
+    popularity: Number(data.popularity.toFixed(1)),
+    genres: data.genres.map(genre => genre.name).join(', '),
+  };
+
+  const modal = basicLightbox.create(previewTemplate(updatedData));
   modal.show();
 
   const closeBtn = modal.element().querySelector('[data-close]');
