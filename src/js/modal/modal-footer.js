@@ -18,28 +18,14 @@ function onCloseModal() {
   window.removeEventListener('keydown', onPressESC);
 }
 
-// function onClickBackdrop(e) {
-//   if (!e.target.classList.contains('.modal__content')) {
-//     onCloseModal();
-//   }
-// }
-
 function onClickBackdrop(e) {
-  if (e.target === e.currentTarget) {
-    modal.close();
-    window.onscroll = function () {
-      window.scrollTo();
-    };
+  if (e.target.classList.contains('js-close-modal')) {
+    onCloseModal();
   }
 }
 
-// overlay.addEventListener('click', function () {
-//   document.querySelector('.backdrop__modal.active').classList.remove('active');
-//   this.classList.remove('active');
-// });
-
 function onPressESC(e) {
-  if (e.code === 'Escape') {
+  if (e.keyCode === 27) {
     onCloseModal();
   }
 }

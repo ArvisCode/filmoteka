@@ -25,7 +25,7 @@
   pointer-events: none;
 }
 
-// .backdrop__modal.is-hidden:target .modal__content {
+// .backdrop__modal.is-hidden .modal__content {
 //   transform: perspective(600px) translate(0px, 0%) rotateX(0geg);
 //   opacity: 0;
 // }
@@ -43,8 +43,8 @@
   max-width: 340px;
 
   // transition: all 0.8s ease 0s;
-  // opacity: 1;
   // transform: perspective(600px) translate(0px, -100%) rotateX(45geg);
+  // opacity: 1;
 
   @media screen and (min-width: $tablet) {
     max-width: 600px;
@@ -81,28 +81,6 @@
   text-align: center;
 
   color: #fff;
-
-  // transition: all 1s ease-in-out;
-
-  // &::before {
-  //   content: attr(data-item);
-  //   // @include center;
-  //   transition: all 1s ease-in-out;
-  //   color: #ff6b08;
-  //   position: absolute;
-  //   top: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   right: 0;
-  //   width: 0;
-  //   overflow: hidden;
-  // }
-
-  // &:hover {
-  //   &:before {
-  //     width: 100%;
-  //   }
-  // }
 
   @media screen and (min-width: $tablet) {
     @include center;
