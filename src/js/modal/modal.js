@@ -21,6 +21,12 @@ function onClickList(e) {
 
 function modal(data) {
 
+    const updatedData = {
+        ...data,
+        popularity: Number(data.popularity.toFixed(1)),
+        genres: data.genres.map(genre => genre.name).join(', '),
+    };
+
     const modal = basicLightbox.create(previewTemplate(data),
         // { onClose: (instance) => location.reload() }
     );
@@ -38,7 +44,6 @@ function modal(data) {
     }
     watchedBtn.addEventListener('click', (e) => onWatchedClick(e, data));
 
-
     //логіка кнопки "Queue"
     let queueList = getQueueList()
 
@@ -50,7 +55,6 @@ function modal(data) {
         watchedBtn.disabled = true;
     }
     queueBtn.addEventListener('click', (e) => onQueueClick(e, data));
-
 
     modal.show();
 
@@ -78,24 +82,49 @@ function modal(data) {
                 window.scrollTo();
             };
         }
-    }
 
-    function onCloseClickBtn() {
-        modal.close();
+        modal.show();
+
+        const closeBtn = modal.element().querySelector('[data-close]');
+        const backdrop = modal.element().querySelector('.modal');
+
+        backdrop.addEventListener('click', onClickBackdrop);
+        closeBtn.addEventListener('click', onCloseClickBtn);
+
+        let scrollX = window.scrollX;
+        let scrollY = window.scrollY;
         window.onscroll = function() {
-            window.scrollTo();
+            window.scrollTo(scrollX, scrollY);
         };
-    }
 
-    function onClickBackdrop(e) {
-        if (e.target === e.currentTarget) {
+        if (modal.visible) {
+            window.addEventListener('keydown', onPressKeyESC);
+        }
+
+        function onPressKeyESC(e) {
+            if (e.code === 'Escape') {
+                modal.close();
+                window.removeEventListener('keydown', onPressKeyESC);
+                window.onscroll = function() {
+                    window.scrollTo();
+                };
+            }
+        }
+
+        function onCloseClickBtn() {
             modal.close();
             window.onscroll = function() {
                 window.scrollTo();
             };
         }
+
+        function onClickBackdrop(e) {
+            if (e.target === e.currentTarget) {
+                modal.close();
+                window.onscroll = function() {
+                    window.scrollTo();
+                };
+            }
+        }
     }
-
-
-
 }

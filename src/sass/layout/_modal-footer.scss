@@ -1,0 +1,197 @@
+@mixin center($display: flex, $justContent: center, $alItems: center) {
+  display: $display;
+  justify-content: $justContent;
+  align-items: $alItems;
+}
+
+.backdrop__modal {
+  position: fixed;
+
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 2;
+
+  transition: opacity 250ms, visibility 250ms;
+}
+
+.backdrop__modal.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+// .backdrop__modal.is-hidden .modal__content {
+//   transform: perspective(600px) translate(0px, 0%) rotateX(0geg);
+//   opacity: 0;
+// }
+
+.modal__footer {
+  min-height: 100%;
+
+  @include center;
+  padding: 30px 10px;
+}
+
+.modal__content {
+  position: relative;
+  background: rgba(66, 66, 66, 0.7);
+  max-width: 340px;
+
+  // transition: all 0.8s ease 0s;
+  // transform: perspective(600px) translate(0px, -100%) rotateX(45geg);
+  // opacity: 1;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 600px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 900px;
+  }
+}
+
+.modal__icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 26px;
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    color: #ff6b08;
+  }
+}
+
+.modal__title {
+  @include center;
+  position: relative;
+
+  margin-top: 45px;
+  margin-bottom: 45px;
+
+  font-size: 25px;
+  line-height: 1.17;
+  letter-spacing: 0.03px;
+  text-align: center;
+
+  color: #fff;
+
+  @media screen and (min-width: $tablet) {
+    @include center;
+
+    font-size: 36px;
+    line-height: 1.17;
+    letter-spacing: 0.05px;
+    text-align: center;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 40px;
+    letter-spacing: 0.07px;
+  }
+}
+
+// !=====================
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.profile-card {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 50%;
+  box-shadow: 0 0 22px #3336;
+  transition: 0.6s;
+  margin: 0 25px;
+
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.profile-card:hover {
+  border-radius: 10px;
+  height: 260px;
+
+  @media screen and (min-width: $tablet) {
+    height: 260px;
+  }
+}
+.profile-card .img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: 0.6s;
+  z-index: 99;
+  filter: grayscale(100%);
+}
+
+.profile-card:hover .img,
+.profile-card:focus .img {
+  transform: translateY(-60px);
+  filter: grayscale(0%);
+}
+
+.img img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 22px #3336;
+  transition: 0.6s;
+}
+
+.profile-card:hover img {
+  border-radius: 10px;
+}
+
+.caption {
+  text-align: center;
+  transform: translateY(-80px);
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.profile-card:hover .caption {
+  opacity: 1;
+}
+
+.caption h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.caption p {
+  font-size: 14px;
+  color: #ff6b08;
+  margin: 2px 0 9px 0;
+}
+
+.caption .social-links a {
+  color: #333;
+  font-size: 26px;
+  transition: 0.6s;
+}
+
+.social-links a:hover {
+  color: #ff6b08;
+}
+
+.social-links a:not(:last-child) {
+  margin-right: 10px;
+}

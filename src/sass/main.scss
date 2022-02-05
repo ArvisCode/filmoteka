@@ -5,6 +5,7 @@
 @import './global/section';
 @import './global/container';
 @import './placeholders/button';
+@import './components/scrollTop';
 @import './layout/header';
 @import './layout/main-container';
 @import './components/spinner';
@@ -12,3 +13,5 @@
 @import './layout/modal';
 @import './layout/preview';
 @import './layout/myLibraryPage.scss';
+@import './layout/modal-footer';
+@import './layout/pagination';

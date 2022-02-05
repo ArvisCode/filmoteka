@@ -1,5 +1,9 @@
+export const LOCAL_STORAGE_WATCHED = 'movies';
+export const LOCAL_STORAGE_QUEUE = 'queueMovie';
+
+
 export function getWatchedList() {
-    let watchedList = JSON.parse(localStorage.getItem('movies'));
+    let watchedList = JSON.parse(localStorage.getItem(LOCAL_STORAGE_WATCHED));
     if (watchedList === null) {
         watchedList = [];
     }
@@ -15,16 +19,15 @@ export function onWatchedClick(e, movie) {
         const buttonWatch = e.target;
         buttonWatch.textContent = "Add to watched";
         document.querySelector('.queue').disabled = false;
-
-        // Notiflix.Notify.failure('Sorry, this movie has already watched');
     } else {
         watchedList.push(movie);
-        localStorage.setItem('movies', JSON.stringify(watchedList));
+        localStorage.setItem(LOCAL_STORAGE_WATCHED, JSON.stringify(watchedList));
         const buttonWatch = e.target;
         buttonWatch.textContent = "Remove from watched";
         document.querySelector('.queue').disabled = true;
     }
 }
+
 
 export function getQueueList() {
     let queueList = JSON.parse(localStorage.getItem('queueMovie'));
@@ -47,7 +50,7 @@ export function onQueueClick(e, movie) {
 
     } else {
         queueList.push(movie);
-        localStorage.setItem('queueMovie', JSON.stringify(queueList));
+        localStorage.setItem(LOCAL_STORAGE_QUEUE, JSON.stringify(queueList));
         const buttonQueue = e.target;
         buttonQueue.textContent = "Remove from queue";
         document.querySelector('.watched').disabled = true;
