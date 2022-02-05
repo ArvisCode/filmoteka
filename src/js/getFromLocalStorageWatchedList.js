@@ -11,12 +11,12 @@ const gallery = document.querySelector('.movie-card__list');
 watchedButton.addEventListener('click', getWatchedFilms);
 
 export default function getWatchedFilms() {
-    const getFilms = localStorage.getItem(LOCAL_STORAGE_WATCHED);
-    const data = JSON.parse(getFilms);
-    gallery.innerHTML = '';
-    console.log(data);
-    // render(data);
-    renderMarkupMovieCard({ results: data }, true);
+  const getFilms = localStorage.getItem(LOCAL_STORAGE_WATCHED);
+  const data = JSON.parse(getFilms);
+  gallery.innerHTML = '';
+  console.log(data);
+  // render(data);
+  renderMarkupMovieCard({ results: data }, true);
 }
 
 // function render (array) {
@@ -44,7 +44,7 @@ export default function getWatchedFilms() {
 //               </div>
 //               <div class="second-thumb">
 //               <span class="info-item-language"> ${original_language}
-//               </span>          
+//               </span>
 //               <p class="info-item-rating"><span>&#9733;</span> ${vote_average}</p>
 //                     </div>
 //                     </div>

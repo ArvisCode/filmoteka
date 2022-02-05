@@ -7,15 +7,15 @@ let page = 2;
 const gallery = document.querySelector('.movie-card__list');
 
 const renderPopularMoviesList = () => {
-    fetch(page)
-        .then(res => {
-            res.results.forEach(movie => {
-                movie.genre_ids = getGenresNames(movie.genre_ids);
-            });
-            gallery.innerHTML = '';
-            renderMarkupMovieCard(res, false);
-        })
-        .catch(err => console.log(err));
+  fetch(page)
+    .then(res => {
+      res.results.forEach(movie => {
+        movie.genre_ids = getGenresNames(movie.genre_ids);
+      });
+      gallery.innerHTML = '';
+      renderMarkupMovieCard(res, false);
+    })
+    .catch(err => console.log(err));
 };
 export { renderPopularMoviesList };
 
