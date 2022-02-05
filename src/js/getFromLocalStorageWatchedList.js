@@ -4,6 +4,8 @@ import { getGenresNames } from './getGenresName';
 import genres from './DATA/genres';
 import imagePing from 'tui-pagination';
 import { LOCAL_STORAGE_WATCHED } from './buttonWatched.js';
+import Swal from 'sweetalert2';
+import swal from 'sweetalert';
 
 const watchedButton = document.querySelector('#watched-btn');
 const gallery = document.querySelector('.movie-card__list');
@@ -15,7 +17,35 @@ export default function getWatchedFilms() {
     const data = JSON.parse(getFilms);
     gallery.innerHTML = '';
     console.log(data);
-    // render(data);
+    const numOfWatched = data.length;
+    if (numOfWatched === 1) {
+        swal({ className: "sweetAlert-note", 
+  title: "Nice start!",
+  text: `You have already watched ${numOfWatched} movies!`,
+            icon: "info",
+            buttons: false,
+  timer:2000,
+});
+    }
+    if (numOfWatched === 2) {
+        swal({ className: "sweetAlert-note-2", 
+  title: "You are on the right way!",
+  text: `You have already watched ${numOfWatched} movies!`,
+            icon: "info",
+            buttons: false,
+  timer:2000,
+});
+    }
+    if (numOfWatched >= 3) {
+        swal({
+            className: "sweetAlert-note-3",
+            title: "You are a movie Boss, now!",
+            text: `You have already watched ${numOfWatched} movies!`,
+            icon: "info",
+            buttons: false,
+            timer: 2000,
+        });
+    }
     renderMarkupMovieCard({ results: data });
 }
 
