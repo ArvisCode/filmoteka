@@ -3,14 +3,35 @@ $gradient: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
 	font-family: "Roboto", sans-serif;
 	font-style: normal;
 	font-weight: 500;
-	padding-top: 45px;
+	padding-top: 40px;
 
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
+.container--header {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: $mobile;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-right: auto;
+	margin-left: auto;
+
+	@media screen and (min-width: $tablet) {
+		justify-content: space-between;
+		max-width: $tablet;
+		padding-left: 75px;
+		padding-right: 75px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		max-width: $desktop;
+	}
+}
+
 .header--home {
-	padding-bottom: 95px;
+	padding-bottom: 90px;
 	background-image: $gradient, url(/images/header-d-1x.jpg);
 
 	@media screen and(min-width:$mobile) {
@@ -34,7 +55,7 @@ $gradient: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
 }
 
 .header--library {
-	padding-bottom: 65px;
+	padding-bottom: 60px;
 	background-image: $gradient, url(/images/header-red-d-1x.jpg);
 
 	@media screen and(min-width:$mobile) {
@@ -54,26 +75,6 @@ $gradient: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
 		@media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
 			background-image: $gradient, url(/images/header-red-d-2x.jpg);
 		}
-	}
-}
-.container--header {
-	display: flex;
-	flex-wrap: wrap;
-	max-width: $mobile;
-	padding-left: 20px;
-	padding-right: 20px;
-	margin-right: auto;
-	margin-left: auto;
-
-	@media screen and (min-width: $tablet) {
-		justify-content: space-between;
-		max-width: $tablet;
-		padding: 60px 75px;
-	}
-
-	@media screen and (min-width: $desktop) {
-		max-width: $desktop;
-		padding: 60px 70px;
 	}
 }
 

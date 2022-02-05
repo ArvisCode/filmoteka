@@ -29,6 +29,7 @@ function onHomeBtnClick() {
 	renderHeaderHome();
 	refs.movieCardList.classList.remove('library');
 	renderPopularMoviesList();
+	onWatchedBtnClick()
 }
 
 function renderHeaderHome() {
