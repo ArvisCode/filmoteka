@@ -30,6 +30,8 @@
     "basiclightbox": "^5.0.4",
     "notiflix": "^3.2.4",
     "pagination": "^0.4.6",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.3.10",
     "tui-pagination": "^3.4.1"
   }
 }
