@@ -15,9 +15,6 @@ export default function getQueueFilms() {
   gallery.innerHTML = '';
   console.log(data);
   renderMarkupMovieCard({ results: data }, true);
-  document
-    .querySelector('.btn-list-delete')
-    .addEventListener('click', () => onQueueClick(data), { once: true });
 }
 
 // function render(array) {
