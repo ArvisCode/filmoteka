@@ -1,0 +1,75 @@
+
+.library {
+    height: auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  display: flex;
+  justify-content: center;
+
+}
+.library-bg {
+  height: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.library-bg__image {
+  width: 320px;
+  height: 320px;
+  overflow: visible;
+  background: url(/images/movie_dog.png) no-repeat center center;
+  background-size: contain;
+     @media screen and (min-width: $tablet) {
+ width: 600px;
+     height: 600px;
+     }
+    }
+
+.library-bg__message {
+  font-style: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  font-style: italic;
+  color: var(--accent-color);
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.sweetAlert-note {
+  border: blue;
+  background-image: url(https://static.tvtropes.org/pmwiki/pub/images/king_julien_9.png),
+  url(https://www.pngall.com/wp-content/uploads/2017/05/Star-PNG-Picture.png),
+    linear-gradient(to right, #e1eec3, #f05053);
+  background-size: 160px,70%,
+    100%;
+  background-repeat:
+    no-repeat;
+  background-position: right, left;
+}
+
+.sweetAlert-note-2 {
+  background-image:
+    url(https://64.media.tumblr.com/37830e7fd25384e3f45a6c95f29cca80/tumblr_ngna5ro7T71tx6u45o1_500.png),
+    url(https://www.pngall.com/wp-content/uploads/2017/05/Star-PNG-Picture.png),
+    linear-gradient(to right, #e1eec3, #f05053),
+  ;
+  background-size: 230px,
+  80%,100%;
+  background-repeat: no-repeat;
+  background-position: top right, left;
+}
+
+.sweetAlert-note-3 {
+  background-image:
+    url(https://www.pngall.com/wp-content/uploads/2017/05/Star-PNG-Picture.png),url(./../images/pngwing.com.png),
+   
+   linear-gradient(to right, #e1eec3, #f05053),
+   ;
+   background-size: 
+   60%,160px,
+   100%;
+   background-repeat: no-repeat;
+   background-position: right, top left;
+   }
+
