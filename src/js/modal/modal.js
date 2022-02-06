@@ -3,7 +3,7 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import previewTemplate from '../../handlebars/preview-template.hbs';
 import fetchById from './fetch-by-id';
 import { onWatchedClick, onQueueClick, getWatchedList, getQueueList } from '../buttonWatched';
-
+import { locationReload } from '../menu/navigation';
 const movieList = document.querySelector('.movie-card__list');
 movieList.addEventListener('click', onClickList);
 
@@ -14,6 +14,12 @@ function onClickList(e) {
     let watchedList = getWatchedList();
     watchedList = watchedList.filter(film => film.id !== Number(currentId));
     localStorage.setItem('movies', JSON.stringify(watchedList));
+
+    let queuedList = getQueueList();
+    queuedList = queuedList.filter(film => film.id !== Number(currentId));
+    localStorage.setItem('queueMovie', JSON.stringify(queuedList));
+
+    locationReload();
   } else {
     fetchById(currentId)
       .then(data => {
@@ -33,7 +39,9 @@ function modal(data) {
   };
 
   const modal = basicLightbox.create(previewTemplate(updatedData), {
-    onClose: instance => location.reload(),
+    onClose: instance => {
+      locationReload();
+    },
   });
 
   //логіка кнопки "Watched"
