@@ -3,11 +3,10 @@ import renderMarkupMovieCard from '../movie-card';
 import fetch from './fetch';
 import { getGenresNames } from '../getGenresName';
 
-let page = 1;
-
 const gallery = document.querySelector('.movie-card__list');
 
-async function renderPopularMoviesList() {
+async function renderPopularMoviesList(pageNumber) {
+  let page = pageNumber;
   await startSpinner();
   await fetch(page)
     .then(res => {
@@ -22,4 +21,4 @@ async function renderPopularMoviesList() {
 }
 export { renderPopularMoviesList };
 
-renderPopularMoviesList(page);
+renderPopularMoviesList(1);
