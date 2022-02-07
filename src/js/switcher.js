@@ -1,4 +1,6 @@
-// function setTheme(themeName) {
+// const input = document.querySelector('input');
+//       input.addEventListener('change', toggleTheme);
+//       function setTheme(themeName) {
 //         localStorage.setItem('theme', themeName);
 //         document.documentElement.className = themeName;
 //       }
