@@ -1,7 +1,7 @@
 .theme-dark {
   .movie-card__poster {
     box-shadow: 0 0 15px rgba(233, 218, 207, 0.5);
-    filter: grayscale(0.8);
+    filter: grayscale(0.6);
 
     &:hover,
     &:focus {
@@ -45,7 +45,7 @@
   background-color: inherit;
  @media screen and (min-width: $tablet) {
      top: 40px;
-     right: 63px;
+     right: 65px;
  }
 }
 
@@ -61,8 +61,8 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 45px;
+  height: 20px;
 }
 
 /* Hide default HTML checkbox */
@@ -88,8 +88,8 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 40px;
-  width: 40px;
+  height: 25px;
+  width: 25px;
   left: 0px;
   bottom: 4px;
   top: 0;
@@ -99,6 +99,7 @@
   transition: 0.4s;
   box-shadow: 0 0px 15px #2020203d;
   background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+  background-size: 18px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -112,17 +113,18 @@ input:focus+.slider {
 }
 
 input:checked+.slider:before {
-  -webkit-transform: translateX(24px);
-  -ms-transform: translateX(24px);
-  transform: translateX(24px);
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
   background: white url('https://i.ibb.co/FxzBYR9/night.png');
+  background-size: 18px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 15px;
 }
 
 .slider.round:before {

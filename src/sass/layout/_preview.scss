@@ -151,14 +151,42 @@
 }
 
 .btn-list-delete {
-  right: 10px;
+  display: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 300ms ease-in-out;
   position: absolute;
-  top: 10px;
+  border-radius: 20%;
+  font-size: 25px;
+  right: 22px;
+  bottom: 10px;
+  min-width: 15px;
+  min-height: 15px;
+  font-size: 20px;
+
+  @media screen and (min-width: $tablet) {
+    display: inline-block;
+    right: 25px;
+    bottom: 20px;
+    min-width: 30px;
+    min-height: 30px;
+    font-size: 25px;
+  }
+  @media screen and (min-width: $desktop) {
+    display: inline-block;
+    right: 5px;
+    bottom: 22px;
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 25px;
+  }
 }
 
-.btn-svg-delete {
-  stroke: orange;
-  border: 2px solid;
-  border-color: orange;
-  border-radius: 50%;
+.btn-list-delete:hover {
+  background-color: #ff6b08;
+  transform: scale(1.2);
+}
+.fa-trash-alt:hover {
+  color: rgb(255, 255, 255);
+  transform: scale(1.2);
 }
