@@ -15,6 +15,7 @@ watchedButton.addEventListener('click', getWatchedFilms);
 export default function getWatchedFilms() {
   const getFilms = localStorage.getItem(LOCAL_STORAGE_WATCHED);
   const data = JSON.parse(getFilms);
+
   if (data === null) {
     data = [];
   }
@@ -51,7 +52,9 @@ export default function getWatchedFilms() {
       timer: 2000,
     });
   }
-  renderMarkupMovieCard({ results: data });
+
+  renderMarkupMovieCard({ results: data }, true);
+
 }
 
 // function render (array) {

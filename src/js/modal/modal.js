@@ -4,13 +4,27 @@ import previewTemplate from '../../handlebars/preview-template.hbs';
 import fetchById from './fetch-by-id';
 import { onWatchedClick, onQueueClick, getWatchedList, getQueueList } from '../buttonWatched';
 
+import { locationReload } from '../menu/navigation';
+
 const movieList = document.querySelector('.movie-card__list');
 movieList.addEventListener('click', onClickList);
 
 function onClickList(e) {
   const currentId = e.target.closest('.movie-card__item').dataset.id;
 
-  fetchById(currentId)
+
+  if (e.target.closest('.btn-list-delete')?.id === 'close') {
+    let watchedList = getWatchedList();
+    watchedList = watchedList.filter(film => film.id !== Number(currentId));
+    localStorage.setItem('movies', JSON.stringify(watchedList));
+
+    let queuedList = getQueueList();
+    queuedList = queuedList.filter(film => film.id !== Number(currentId));
+    localStorage.setItem('queueMovie', JSON.stringify(queuedList));
+
+    locationReload();
+  } else {
+    fetchById(currentId)
     .then(data => {
       data.genre_ids = data.genres.map(film => film.name);
       const genre2 = data.genre_ids.slice(0, 2);
@@ -21,6 +35,7 @@ function onClickList(e) {
       modal(data);
     })
     .catch(error => console.log(error));
+  }
 }
 
 function modal(data) {
@@ -30,10 +45,13 @@ function modal(data) {
     genres: data.genres.map(genre => genre.name).join(', '),
   };
 
-  const modal = basicLightbox.create(
-    previewTemplate(updatedData),
-    // { onClose: (instance) => location.reload() }
-  );
+
+  const modal = basicLightbox.create(previewTemplate(updatedData), {
+    onClose: instance => {
+      locationReload();
+    },
+  });
+
 
   //логіка кнопки "Watched"
   let watchedList = getWatchedList();

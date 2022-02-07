@@ -14,7 +14,7 @@ async function renderPopularMoviesList(pageNumber) {
         movie.genre_ids = getGenresNames(movie.genre_ids);
       });
       gallery.innerHTML = '';
-      renderMarkupMovieCard(res);
+      renderMarkupMovieCard(res, false);
     })
     .catch(err => console.log(err));
   hideLoader();

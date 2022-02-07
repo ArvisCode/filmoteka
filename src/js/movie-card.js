@@ -1,15 +1,15 @@
 import { getGenresNames } from './getGenresName';
-export default function renderMarkupMovieCard({ results }) {
-    const gallery = document.querySelector('.movie-card__list')
+export default function renderMarkupMovieCard({ results }, show_delete) {
+  const gallery = document.querySelector('.movie-card__list');
   const markup = results
     .map(({ id, poster_path, genre_ids, original_language, vote_average, title, release_date }) => {
       return `
       <li class="movie-card__item" data-id="${id}">
                 <div class="movie-card">
                  ${
-                  poster_path
-                    ? `<img src="https://image.tmdb.org/t/p/w500${poster_path}"`
-                    : `<img src="https://yt3.ggpht.com/AAKF_677TIvjFz_9xFF0R6PgiVd0kRpEtY6APSxSDRP65nXg8hkn9NFsz2bRd9_Z37DJ9D_b=s900-c-k-c0x00ffffff-no-rj"`
+                   poster_path
+                     ? `<img src="https://image.tmdb.org/t/p/w500${poster_path}"`
+                     : `<img src="https://yt3.ggpht.com/AAKF_677TIvjFz_9xFF0R6PgiVd0kRpEtY6APSxSDRP65nXg8hkn9NFsz2bRd9_Z37DJ9D_b=s900-c-k-c0x00ffffff-no-rj"`
                  }
                         class="movie-card__poster"width="305"
                         height="205"
@@ -30,14 +30,23 @@ export default function renderMarkupMovieCard({ results }) {
                     </div>
                     </div>
                 </div>
+                ${
+                  show_delete
+                    ? `<button class="modal__button btn-list-delete" id="close" type="button">
+      <svg class="modal__icon btn-svg-delete " width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 8L22 22" stroke-width="2"></path>
+        <path d="M8 22L22 8" stroke-width="2"></path>
+      </svg>
+    </button>`
+                    : ''
+                }
     </li> `;
     })
-    .join("");
+    .join('');
 
-  gallery.insertAdjacentHTML("beforeend", markup);
+  gallery.insertAdjacentHTML('beforeend', markup);
 }
 
 // function renderMarkupMovieCard(data) {
 //   gallery.insertAdjacentHTML('beforeend', movieCard(data));
 // }
- 
