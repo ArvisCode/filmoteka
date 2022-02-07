@@ -58,12 +58,17 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media screen and (min-width: $desktop) {
+    min-width: 30%;
+  }
 }
 
 .preview__value {
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
@@ -71,18 +76,26 @@
   &--accent {
     width: 36px;
     height: 16px;
+
     background-color: var(--accent-color);
     color: var(--white-text-color);
     border-radius: 5px;
+
     margin-right: 3px;
   }
 
   &--gray {
     width: 36px;
     height: 16px;
+
     background-color: var(--second-bg-color);
     border-radius: 5px;
+
     margin-left: 3px;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
   }
 }
 
@@ -135,4 +148,17 @@
   background-color: #aaa;
   color: grey;
   border: 1px solid grey;
+}
+
+.btn-list-delete {
+  right: 10px;
+  position: absolute;
+  top: 10px;
+}
+
+.btn-svg-delete {
+  stroke: orange;
+  border: 2px solid;
+  border-color: orange;
+  border-radius: 50%;
 }

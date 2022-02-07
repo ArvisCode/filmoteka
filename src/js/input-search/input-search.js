@@ -44,7 +44,7 @@ async function handleInputSearch(e) {
       response.results.forEach(movie => {
         movie.genre_ids = getGenresNames(movie.genre_ids);
       });
-      renderMarkupMovieCard(response);
+      renderMarkupMovieCard(response, false);
       hideLoader();
     })
     .catch(err => console.log(err));

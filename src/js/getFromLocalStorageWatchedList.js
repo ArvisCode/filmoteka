@@ -13,40 +13,48 @@ const gallery = document.querySelector('.movie-card__list');
 watchedButton.addEventListener('click', getWatchedFilms);
 
 export default function getWatchedFilms() {
-    const getFilms = localStorage.getItem(LOCAL_STORAGE_WATCHED);
-    const data = JSON.parse(getFilms);
-    gallery.innerHTML = '';
-    console.log(data);
-    const numOfWatched = data.length;
-    if (numOfWatched === 1) {
-        swal({ className: "sweetAlert-note", 
-  title: "Nice start!",
-  text: `You have already watched ${numOfWatched} movies!`,
-            icon: "info",
-            buttons: false,
-  timer:2000,
-});
-    }
-    if (numOfWatched === 2) {
-        swal({ className: "sweetAlert-note-2", 
-  title: "You are on the right way!",
-  text: `You have already watched ${numOfWatched} movies!`,
-            icon: "info",
-            buttons: false,
-  timer:2000,
-});
-    }
-    if (numOfWatched >= 3) {
-        swal({
-            className: "sweetAlert-note-3",
-            title: "You are a movie Boss, now!",
-            text: `You have already watched ${numOfWatched} movies!`,
-            icon: "info",
-            buttons: false,
-            timer: 2000,
-        });
-    }
-    renderMarkupMovieCard({ results: data });
+  const getFilms = localStorage.getItem(LOCAL_STORAGE_WATCHED);
+  const data = JSON.parse(getFilms);
+
+  if (data === null) {
+    data = [];
+  }
+  gallery.innerHTML = '';
+  console.log(data);
+  const numOfWatched = data.length;
+  if (numOfWatched === 1) {
+    swal({
+      className: 'sweetAlert-note',
+      title: 'Nice start!',
+      text: `You have already watched ${numOfWatched} movies!`,
+      icon: 'info',
+      buttons: false,
+      timer: 2000,
+    });
+  }
+  if (numOfWatched === 2) {
+    swal({
+      className: 'sweetAlert-note-2',
+      title: 'You are on the right way!',
+      text: `You have already watched ${numOfWatched} movies!`,
+      icon: 'info',
+      buttons: false,
+      timer: 2000,
+    });
+  }
+  if (numOfWatched >= 3) {
+    swal({
+      className: 'sweetAlert-note-3',
+      title: 'You are a movie Boss, now!',
+      text: `You have already watched ${numOfWatched} movies!`,
+      icon: 'info',
+      buttons: false,
+      timer: 2000,
+    });
+  }
+
+  renderMarkupMovieCard({ results: data }, true);
+
 }
 
 // function render (array) {
@@ -74,7 +82,7 @@ export default function getWatchedFilms() {
 //               </div>
 //               <div class="second-thumb">
 //               <span class="info-item-language"> ${original_language}
-//               </span>          
+//               </span>
 //               <p class="info-item-rating"><span>&#9733;</span> ${vote_average}</p>
 //                     </div>
 //                     </div>
