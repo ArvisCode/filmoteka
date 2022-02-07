@@ -24,35 +24,13 @@
     />
   </head>
 
-  <body>
+  <body class="theme-light">
     <include src="./partials/header.html"></include>
     <include src="./partials/main-container.html"></include>
     <include src="./partials/footer.html"></include>
     <include src="./partials/footer-modal.html"></include>
 
     <script src="./js/index.js"></script>
-    <script>
-      function setTheme(themeName) {
-        localStorage.setItem('theme', themeName);
-        document.documentElement.className = themeName;
-      }
-      function toggleTheme() {
-        if (localStorage.getItem('theme') === 'theme-dark') {
-          setTheme('theme-light');
-        } else {
-          setTheme('theme-dark');
-        }
-      }
-      (function () {
-        if (localStorage.getItem('theme') === 'theme-dark') {
-          setTheme('theme-dark');
-          document.getElementById('slider').checked = false;
-        } else {
-          setTheme('theme-light');
-          document.getElementById('slider').checked = true;
-        }
-      })();
-    </script>
     <script
       defer
       src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
