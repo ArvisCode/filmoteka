@@ -1,0 +1,130 @@
+.theme-dark {
+  .movie-card__poster {
+    box-shadow: 0 0 15px rgba(233, 218, 207, 0.5);
+    filter: grayscale(0.8);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 40px rgba(146, 105, 76, 0.7);
+      filter: saturate(165%);
+    }
+  }
+
+  .info-item-rating {
+    color: var(--second-white-color);
+  }
+
+  .movie-info-title {
+    color: var(--second-white-color);
+  }
+
+  .modal__wrapper {
+    color: var(--second-white-color);
+  }
+
+  .modal__icon {
+    stroke: var(--second-white-color);
+  }
+}
+
+.container--header {
+  position: relative;
+}
+
+.switcher {
+  position: absolute;
+  top: 90px;
+  right: 110px;
+  display: flex;
+  width: 100px;
+  height: 100%;
+  background: #2a2c2d;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+ @media screen and (min-width: $tablet) {
+     top: 40px;
+     right: 63px;
+ }
+}
+
+.switcher button {
+  color: #000000;
+  background: #0060df;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: 0px;
+  bottom: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow: 0 0px 15px #2020203d;
+  background: white url('https://i.ibb.co/FxzBYR9/night.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input:checked+.slider {
+  background-color: var(--accent-color);
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px var(--accent-color);
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
