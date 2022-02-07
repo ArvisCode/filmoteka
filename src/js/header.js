@@ -1,23 +1,18 @@
 'use strict';
 import { renderPopularMoviesList } from './fetches/renderPopularMovieList';
 import { myLibraryPage } from './myLibraryPage';
-import getWatchedFilms from './getFromLocalStorageWatchedList';
-import getQueueFilms from './getfromLocalStorageQueueList';
-import { LOCAL_STORAGE_WATCHED } from './buttonWatched';
-import { LOCAL_STORAGE_QUEUE } from './buttonWatched';
 
 const refs = {
 	header: document.querySelector('.header'),
 	logo: document.querySelector('.logo'),
 	homeBtn: document.querySelector('#home-btn'),
 	libraryBtn: document.querySelector('#library-btn'),
-	searchInput: document.querySelector('.search-field'),
+	searchInput: document.querySelector('.search-container'),
 	libraryBtnsContainer: document.querySelector('.library-btns-container'),
 	watchedBtn: document.querySelector('#watched-btn'),
 	queueBtn: document.querySelector('#queue-btn'),
 	movieCardList: document.querySelector('.movie-card__list'),
 };
-
 
 refs.libraryBtn.addEventListener('click', onLibraryBtnClick);
 refs.homeBtn.addEventListener('click', onHomeBtnClick);
@@ -27,11 +22,7 @@ refs.queueBtn.addEventListener('click', onQueueBtnClick);
 
 function onLibraryBtnClick() {
 	createHeaderLibrary();
-  if (!localStorage.getItem(LOCAL_STORAGE_WATCHED)) {
 	myLibraryPage();
-  } else {
-	getWatchedFilms();
-  }
 }
 
 function onHomeBtnClick() {
@@ -71,20 +62,76 @@ function createHeaderLibrary() {
 
 function onWatchedBtnClick() {
 	if (refs.queueBtn.classList.contains('library-btn--current')) {
-    refs.watchedBtn.classList.toggle('library-btn--current');
-    refs.queueBtn.classList.toggle('library-btn--current');
-  }
-  if (!localStorage.getItem(LOCAL_STORAGE_WATCHED)) {
-	myLibraryPage();
-  } 
+		refs.watchedBtn.classList.toggle('library-btn--current');
+		refs.queueBtn.classList.toggle('library-btn--current');
+	}
 }
 
 function onQueueBtnClick() {
-  if (refs.watchedBtn.classList.contains('library-btn--current')) {
-    refs.queueBtn.classList.toggle('library-btn--current');
-    refs.watchedBtn.classList.toggle('library-btn--current');
-  }
-  if (!localStorage.getItem(LOCAL_STORAGE_QUEUE)) {
-	myLibraryPage();
-  }
+	if (refs.watchedBtn.classList.contains('library-btn--current')) {
+		refs.queueBtn.classList.toggle('library-btn--current');
+		refs.watchedBtn.classList.toggle('library-btn--current');
+	}
 }
+
+class Search {
+	constructor(element) {
+		this._element = element;
+		this._input = element.querySelector('.search-input');
+		this._cross = element.querySelector('.cross');
+		this._opened = false;
+
+		this._bindEventListeners();
+	}
+
+	_bindEventListeners() {
+		this._input.addEventListener('focus', (e) => {
+			if (!this._opened) {
+				this._input.blur();
+			}
+		});
+
+		this._input.addEventListener('blur', (e) => {
+			if (this._opened && this._input.value === '') {
+				this._close();
+			}
+		});
+
+		this._element.addEventListener('click', () => {
+			if (!this._opened) {
+				this._open();
+			}
+		});
+
+		this._cross.addEventListener('click', (e) => {
+			if (this._opened) {
+				e.stopPropagation();
+				this._clearValue();
+				this._close();
+			}
+		});
+	}
+
+	_open() {
+		this._element.classList.add('opened');
+		this._opened = true;
+
+		setTimeout(() => {
+			this._input.focus();
+		}, 900);
+	}
+
+	_close() {
+		this._element.classList.remove('opened');
+		this._opened = false;
+		this._input.blur();
+	}
+
+	_clearValue() {
+		this._input.value = '';
+	}
+}
+
+document.querySelectorAll('.search').forEach((element) => {
+	new Search(element);
+});
