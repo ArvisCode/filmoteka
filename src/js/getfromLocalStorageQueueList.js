@@ -12,7 +12,7 @@ queueButton.addEventListener('click', getQueueFilms);
 export default function getQueueFilms() {
   const getFilms = localStorage.getItem(LOCAL_STORAGE_QUEUE);
   const data = JSON.parse(getFilms);
-  
+
   if (data === null) {
     data = [];
   }
