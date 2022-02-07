@@ -1,3 +1,4 @@
+import './switcher';
 import '../sass/main.scss';
 import './modal/modal';
 import './getFromLocalStorageWatchedList';
