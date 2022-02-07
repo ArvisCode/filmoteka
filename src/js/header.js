@@ -73,3 +73,65 @@ function onQueueBtnClick() {
 		refs.watchedBtn.classList.toggle('library-btn--current');
 	}
 }
+
+class Search {
+	constructor(element) {
+		this._element = element;
+		this._input = element.querySelector('.search-input');
+		this._cross = element.querySelector('.cross');
+		this._opened = false;
+
+		this._bindEventListeners();
+	}
+
+	_bindEventListeners() {
+		this._input.addEventListener('focus', (e) => {
+			if (!this._opened) {
+				this._input.blur();
+			}
+		});
+
+		this._input.addEventListener('blur', (e) => {
+			if (this._opened && this._input.value === '') {
+				this._close();
+			}
+		});
+
+		this._element.addEventListener('click', () => {
+			if (!this._opened) {
+				this._open();
+			}
+		});
+
+		this._cross.addEventListener('click', (e) => {
+			if (this._opened) {
+				e.stopPropagation();
+				this._clearValue();
+				this._close();
+			}
+		});
+	}
+
+	_open() {
+		this._element.classList.add('opened');
+		this._opened = true;
+
+		setTimeout(() => {
+			this._input.focus();
+		}, 900);
+	}
+
+	_close() {
+		this._element.classList.remove('opened');
+		this._opened = false;
+		this._input.blur();
+	}
+
+	_clearValue() {
+		this._input.value = '';
+	}
+}
+
+document.querySelectorAll('.search').forEach((element) => {
+	new Search(element);
+});
