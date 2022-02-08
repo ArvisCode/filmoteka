@@ -37,7 +37,7 @@ const team = [
         link: 'https://github.com/NadiaEismont',
       },
       {
-        name: 'Dmitriy Brigadir',
+        name: 'Dmitry Brigadier',
         link: 'https://github.com/AKdimka',
       },
       {
