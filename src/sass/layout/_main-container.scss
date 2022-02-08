@@ -31,10 +31,12 @@ margin-bottom: 20px;
     margin-left: 30px;
     flex-basis: calc((100% - 90px) / 3);
     position: relative;
+    transition: transform var(--hover-animation)
   }
   &:hover,
   &:focus {
       transform: scale(1.05);
+     
       
       
       .movie-card__poster{
@@ -59,18 +61,10 @@ margin-bottom: 20px;
     }
   }
   .movie-card__poster {
-    width: 280px;
-    height: 402px;
     border-radius: 5px;
     cursor: pointer;
     filter: drop-shadow(1px 1px 1px rgba(55%, 55%, 55%, 0.4));
-    
     filter: none;
-
-    @media screen and (min-width: $tablet) {
-      width: 274px;
-      height: 398px;
-    }
   }
 
 .movie-card__thumb {
