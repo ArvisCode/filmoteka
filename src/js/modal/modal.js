@@ -60,12 +60,12 @@ function modal(data) {
   const queueBtn = modal.element().querySelector('.queue');
   if (!watchedList.find(film => film.id === data.id)) {
     watchedBtn.textContent = 'Add to watched';
-    queueBtn.disabled = false;
+    // queueBtn.disabled = false;
   } else {
-    queueBtn.disabled = true;
+    // queueBtn.disabled = true;
     watchedBtn.textContent = 'Remove from watched';
   }
-  watchedBtn.addEventListener('click', e => onWatchedClick(e, data));
+  watchedBtn.addEventListener('click', e => onWatchedClick(modal, data));
 
   //логіка кнопки "Queue"
   let queueList = getQueueList();
@@ -73,12 +73,12 @@ function modal(data) {
   if (!queueList.find(film => film.id === data.id)) {
     //перевірка наявності фільма в списку
     queueBtn.textContent = 'Add to queue';
-    watchedBtn.disabled = false;
+    // watchedBtn.disabled = false;
   } else {
     queueBtn.textContent = 'Remove from queue';
-    watchedBtn.disabled = true;
+    // watchedBtn.disabled = true;
   }
-  queueBtn.addEventListener('click', e => onQueueClick(e, data));
+  queueBtn.addEventListener('click', e => onQueueClick(modal, data));
 
   modal.show();
 

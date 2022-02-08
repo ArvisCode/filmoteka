@@ -8,21 +8,29 @@ export function getWatchedList() {
   }
   return watchedList;
 }
-export function onWatchedClick(e, movie) {
+function removeMovieFromWatched(modal, movie) {
   let watchedList = getWatchedList();
-
+  watchedList = watchedList.filter(film => film.id !== movie.id);
+  localStorage.setItem('movies', JSON.stringify(watchedList));
+  const buttonWatch = modal.element().querySelector('.watched');
+  buttonWatch.textContent = 'Add to watched';
+  // document.querySelector('.queue').disabled = false;
+}
+function addMovieToWatched(modal, movie) {
+  let watchedList = getWatchedList();
+  watchedList.push(movie);
+  localStorage.setItem(LOCAL_STORAGE_WATCHED, JSON.stringify(watchedList));
+  const buttonWatch = modal.element().querySelector('.watched');
+  buttonWatch.textContent = 'Remove from watched';
+  // document.querySelector('.queue').disabled = true;
+}
+export function onWatchedClick(modal, movie) {
+  let watchedList = getWatchedList();
   if (watchedList.find(film => film.id === movie.id)) {
-    watchedList = watchedList.filter(film => film.id !== movie.id);
-    localStorage.setItem('movies', JSON.stringify(watchedList));
-    const buttonWatch = e.target;
-    buttonWatch.textContent = 'Add to watched';
-    document.querySelector('.queue').disabled = false;
+    removeMovieFromWatched(modal, movie);
   } else {
-    watchedList.push(movie);
-    localStorage.setItem(LOCAL_STORAGE_WATCHED, JSON.stringify(watchedList));
-    const buttonWatch = e.target;
-    buttonWatch.textContent = 'Remove from watched';
-    document.querySelector('.queue').disabled = true;
+    removeMovieFromQueue(modal, movie);
+    addMovieToWatched(modal, movie);
   }
 }
 
@@ -33,21 +41,28 @@ export function getQueueList() {
   }
   return queueList;
 }
-
-export function onQueueClick(e, movie) {
+function removeMovieFromQueue(modal, movie) {
+  let queueList = getQueueList();
+  queueList = queueList.filter(film => film.id !== movie.id);
+  localStorage.setItem('queueMovie', JSON.stringify(queueList));
+  const buttonQueue = modal.element().querySelector('.queue');
+  buttonQueue.textContent = 'Add to queue';
+  // document.querySelector('.watched').disabled = false;
+}
+function addMovieFromQueue(modal, movie) {
+  let queueList = getQueueList();
+  queueList.push(movie);
+  localStorage.setItem(LOCAL_STORAGE_QUEUE, JSON.stringify(queueList));
+  const buttonQueue = modal.element().querySelector('.queue');
+  buttonQueue.textContent = 'Remove from queue';
+  // document.querySelector('.watched').disabled = true;
+}
+export function onQueueClick(modal, movie) {
   let queueList = getQueueList();
   if (queueList.find(film => film.id === movie.id)) {
-    // видалення фільма з черги
-    queueList = queueList.filter(film => film.id !== movie.id);
-    localStorage.setItem('queueMovie', JSON.stringify(queueList));
-    const buttonQueue = e.target;
-    buttonQueue.textContent = 'Add to queue';
-    document.querySelector('.watched').disabled = false;
+    removeMovieFromQueue(modal, movie);
   } else {
-    queueList.push(movie);
-    localStorage.setItem(LOCAL_STORAGE_QUEUE, JSON.stringify(queueList));
-    const buttonQueue = e.target;
-    buttonQueue.textContent = 'Remove from queue';
-    document.querySelector('.watched').disabled = true;
+    removeMovieFromWatched(modal, movie);
+    addMovieFromQueue(modal, movie);
   }
 }
