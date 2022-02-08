@@ -42,6 +42,7 @@ export default function renderMarkupMovieCard({ results }, show_delete) {
     .join('');
 
   gallery.insertAdjacentHTML('beforeend', markup);
+  gallery.classList.remove('library');
 }
 
 // function renderMarkupMovieCard(data) {
