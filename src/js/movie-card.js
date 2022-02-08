@@ -43,7 +43,3 @@ export default function renderMarkupMovieCard({ results }, show_delete) {
 
   gallery.insertAdjacentHTML('beforeend', markup);
 }
-
-// function renderMarkupMovieCard(data) {
-//   gallery.insertAdjacentHTML('beforeend', movieCard(data));
-// }
