@@ -8,11 +8,13 @@ const gallery = document.querySelector('.movie-card__list');
 async function renderPopularMoviesList(pageNumber) {
   let page = pageNumber;
   await startSpinner();
-  await fetch(page)
+  const selectedGenre = localStorage.getItem('selectedGenre');
+  await fetch(page, selectedGenre)
     .then(res => {
       res.results.forEach(movie => {
         movie.genre_ids = getGenresNames(movie.genre_ids);
       });
+
       gallery.innerHTML = '';
       renderMarkupMovieCard(res, false);
     })
