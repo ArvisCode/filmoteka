@@ -62,8 +62,20 @@ margin-bottom: 20px;
     cursor: pointer;
     filter: drop-shadow(1px 1px 1px rgba(55%, 55%, 55%, 0.4));
     filter: none;
+width: 280px;
+height: 400px;
+ @media screen and (min-width: $tablet) {
+    min-width: 293px;
+    
   }
-
+  @media screen and (min-width: $desktop) {
+    min-width: 274px;
+   
+    
+  }
+  }
+  
+  
 .movie-card__thumb {
   display: flex;
   flex-direction: column;
