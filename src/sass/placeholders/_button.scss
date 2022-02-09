@@ -9,8 +9,8 @@
   line-height: 1.33;
   text-transform: uppercase;
 
-  color: var(--white-text-color);
-  background-color: var(--accent-color);
+  color: var(--accent-color);
+  background-color: transparent;
   border-radius: 5px;
   border: 1px solid var(--accent-color);
 
@@ -19,22 +19,7 @@
 
   &:hover,
   &:focus {
-    color: var(--accent-color);
-    background-color: transparent;
-  }
-}
-
-%button-inversion {
-  @extend %button;
-
-  background-color: transparent;
-  color: var(--main-text-color);
-  border-color: var(--main-text-color);
-
-  transition: border-color var(--hover-animation), color var(--hover-animation);
-
-  &:hover,
-  &:focus {
-    border-color: var(--accent-color);
+    color: var(--white-text-color);
+    background-color: var(--accent-color);
   }
 }
