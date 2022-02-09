@@ -5,7 +5,7 @@ import getWatchedFilms from './getFromLocalStorageWatchedList';
 import getQueueFilms from './getfromLocalStorageQueueList';
 import { getWatchedList } from './buttonWatched';
 import { getQueueList } from './buttonWatched';
-
+const genresBtn = document.querySelector('.dropdown-genres-btn');
 const refs = {
   header: document.querySelector('.header'),
   logo: document.querySelector('.logo'),
@@ -34,6 +34,9 @@ function onLibraryBtnClick() {
 }
 
 function onHomeBtnClick() {
+  localStorage.removeItem('selectedGenre');
+  genresBtn.textContent = 'Search by genres';
+  genresBtn.style.display = 'inline-block';
   renderHeaderHome();
   refs.movieCardList.classList.remove('library');
   renderPopularMoviesList();
