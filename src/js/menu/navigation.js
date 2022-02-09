@@ -38,7 +38,9 @@ export function locationReload() {
 
     default:
     case '#home':
-      homeNav.click();
+      if (window.location.hash !== '#home') {
+        homeNav.click();
+      }
       break;
   }
 }
