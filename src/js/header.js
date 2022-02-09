@@ -12,6 +12,7 @@ const refs = {
   homeBtn: document.querySelector('#home-btn'),
   libraryBtn: document.querySelector('#library-btn'),
   searchInput: document.querySelector('.search-container'),
+  searchInputField: document.querySelector('.search-field__input'),
   libraryBtnsContainer: document.querySelector('.library-btns-container'),
   watchedBtn: document.querySelector('#watched-btn'),
   queueBtn: document.querySelector('#queue-btn'),
@@ -36,7 +37,11 @@ function onLibraryBtnClick() {
 function onHomeBtnClick() {
   renderHeaderHome();
   refs.movieCardList.classList.remove('library');
-  renderPopularMoviesList();
+
+  if (refs.searchInputField.value.trim() === '') {
+    renderPopularMoviesList();
+  }
+
   onWatchedBtnClick();
 }
 
@@ -139,6 +144,7 @@ class Search {
     this._element.classList.remove('opened');
     this._opened = false;
     this._input.blur();
+    renderPopularMoviesList();
   }
 
   _clearValue() {
