@@ -38,9 +38,8 @@ function onHomeBtnClick() {
   renderHeaderHome();
   refs.movieCardList.classList.remove('library');
 
-  if (refs.searchInputField.value.trim() === '') {
-    renderPopularMoviesList();
-  }
+  renderPopularMoviesList();
+  refs.searchInputField.value = '';
 
   onWatchedBtnClick();
 }
