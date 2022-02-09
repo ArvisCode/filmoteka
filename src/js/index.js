@@ -15,7 +15,7 @@ import { spinner, startSpinner, hideLoader } from './spinner';
 import { team } from './team';
 
 import './menu/navigation';
-
+import './searchByGenres';
 //(function renderMarkupMovieCard(data) {
 //  gallery.insertAdjacentHTML('beforeend', movieCard(data));
 //})();

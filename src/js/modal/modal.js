@@ -5,6 +5,7 @@ import fetchById from './fetch-by-id';
 import { onWatchedClick, onQueueClick, getWatchedList, getQueueList } from '../buttonWatched';
 
 import { locationReload } from '../menu/navigation';
+import genres from '../DATA/genres';
 
 const movieList = document.querySelector('.movie-card__list');
 movieList.addEventListener('click', onClickList);
