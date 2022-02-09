@@ -45,11 +45,13 @@
 
 .preview__point {
   display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .preview__property {
   min-width: 40%;
-  margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
