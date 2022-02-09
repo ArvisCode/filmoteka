@@ -30,6 +30,12 @@
   .modal__icon {
     stroke: var(--second-white-color);
   }
+  .tui-pagination .tui-page-btn {
+    color: var(--second-white-color);
+  }
+  .tui-pagination .tui-ico-ellip {
+     fill: var(--second-white-color);
+  }
 }
 
 .container--header {
