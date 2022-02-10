@@ -5,6 +5,8 @@ import getWatchedFilms from './getFromLocalStorageWatchedList';
 import getQueueFilms from './getfromLocalStorageQueueList';
 import { getWatchedList } from './buttonWatched';
 import { getQueueList } from './buttonWatched';
+import { unobservePopularMovies } from './fetches/renderPopularMovieList';
+import { unobserverForSearchInput } from './input-search/input-search';
 const genresBtn = document.querySelector('.dropdown-genres-btn');
 const refs = {
   header: document.querySelector('.header'),
@@ -26,6 +28,8 @@ refs.watchedBtn.addEventListener('click', onWatchedBtnClick);
 refs.queueBtn.addEventListener('click', onQueueBtnClick);
 
 function onLibraryBtnClick() {
+  unobservePopularMovies();
+  unobserverForSearchInput();
   createHeaderLibrary();
   if (getWatchedList().length === 0) {
     myLibraryPage();
@@ -49,8 +53,8 @@ function onHomeBtnClick() {
 
 function renderHeaderHome() {
   if (refs.header.classList.contains('header--library')) {
-    refs.homeBtn.setAttribute('disabled', true);
-    refs.logo.setAttribute('disabled', true);
+    // refs.homeBtn.setAttribute('disabled', true);
+    // refs.logo.setAttribute('disabled', true);
     refs.libraryBtn.removeAttribute('disabled');
     refs.header.classList.toggle('header--library');
     refs.header.classList.toggle('header--home');
@@ -64,8 +68,8 @@ function renderHeaderHome() {
 function createHeaderLibrary() {
   if (refs.header.classList.contains('header--home')) {
     refs.libraryBtn.setAttribute('disabled', true);
-    refs.logo.removeAttribute('disabled');
-    refs.homeBtn.removeAttribute('disabled');
+    // refs.logo.removeAttribute('disabled');
+    // refs.homeBtn.removeAttribute('disabled');
     refs.header.classList.toggle('header--library');
     refs.header.classList.toggle('header--home');
     refs.homeBtn.classList.toggle('navigation__btn--current');
