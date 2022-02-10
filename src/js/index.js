@@ -5,7 +5,7 @@ import './getFromLocalStorageWatchedList';
 import './getfromLocalStorageQueueList';
 import './modal/modal-footer';
 import fetch from './fetches/fetch';
-import './pagination/pagination';
+// import './pagination/pagination';
 import header from './header';
 import scrollTop from './scrollToTop';
 import './input-search/input-search';
