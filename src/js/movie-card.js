@@ -39,7 +39,7 @@ export default function renderMarkupMovieCard({ results }, show_delete) {
     </li> `;
     })
     .join('');
-
+gallery.classList.remove('library');
   gallery.insertAdjacentHTML('beforeend', markup);
-  gallery.classList.remove('library');
+  
 }
