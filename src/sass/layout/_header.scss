@@ -175,14 +175,10 @@ $gradient: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
   position: relative;
 display: flex;
   margin-top: 51px;
-  margin-right: 0px;
+  margin-right: auto;
   margin-left: auto;
   @media screen and (min-width: $tablet) {
     margin-top: 41px;
-    margin-right: auto;
-    margin-left: auto;
-    justify-content: center;
-    align-items: center;
   }
 }
 //------------------------------------------------------
@@ -256,18 +252,14 @@ $border-width: 2.5px;
 .library-btns-container {
   display: flex;
   margin-top: 61px;
-  margin-left: 0px;
+  margin-left: auto;
   margin-right: auto;
 
   @media screen and (min-width: $tablet) {
     margin-top: 51px;
-  margin-left: 0px;
-  margin-right: auto;
+  
   }
-    @media screen and (min-width: $desktop) {
-        margin-left: 120px;
-        margin-right: auto;
-        }
+
 
 }
 .on-library-none {
@@ -316,13 +308,14 @@ $border-width: 2.5px;
 }
 
 .dropdown {
-  top: 110px;
-  left: 8px;
+  top:145px;
+  right: 0;
+  position: absolute;
   box-sizing: border-box;
   display: block;
-  height: 65.1875px;
-  position: relative;
-  width: 165.422px;
+  height: 50px;
+  // position: relative;
+  width: 165px;
   font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -332,6 +325,9 @@ $border-width: 2.5px;
   text-size-adjust: 100%;
   display: inline-block;
   // -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   @media screen and (min-width: $tablet) {
+     right: 70px;
+   }
 }
 .btn-secondary {
   // background-color: #24252560;
