@@ -36,6 +36,15 @@
   .tui-pagination .tui-ico-ellip {
      fill: var(--second-white-color);
   }
+  .dropdown-content a {
+    background-color: rgb(85, 79, 79);
+    color: var(--second-white-color);
+    
+
+  }
+  .dropdown-content{
+    box-shadow: 0 0 50px rgba(55%, 55%, 55%, 1);
+  }
 }
 
 .container--header {

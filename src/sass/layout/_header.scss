@@ -309,7 +309,7 @@ $border-width: 2.5px;
 
 .dropdown {
   top:145px;
-  right: 0;
+  right: 10px;
   position: absolute;
   box-sizing: border-box;
   display: block;
@@ -338,6 +338,7 @@ $border-width: 2.5px;
   margin: 0px;
   padding-bottom: 6px 12px;
   width: 165.422px;
+  border-radius: 5px 5px 0px 0px;
   color: rgb(255, 255, 255);
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -351,8 +352,8 @@ $border-width: 2.5px;
   // outline-color: rgb(255, 255, 255);
   outline-style: none;
   outline-width: 0px;
-  -webkit-border-image: none;
-  filter: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
+  
+  filter: drop-shadow(0px 3px 10px rgba(255, 107, 1, 0.3));
 }
 .btn {
   background-color: #f0bb7b21;
@@ -370,6 +371,7 @@ $border-width: 2.5px;
 }
 .show {
   display: block;
+  
 }
 /* Dropdown Button */
 .dropbtn {
@@ -384,8 +386,8 @@ $border-width: 2.5px;
   position: absolute;
 
   // min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  box-shadow: 0 0 20px rgba(55%, 55%, 55%, 0.4);
+  z-index: 10;
 }
 
 /* Links inside the dropdown */
@@ -394,15 +396,17 @@ $border-width: 2.5px;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  background-color: white;
+  background-color:var(--second-bg-color);
   cursor: pointer;
   width: 165.422px;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: rgb(85, 79, 79);
-  color: #ddd;
+  // background-color: rgb(85, 79, 79);
+  background-color: var(--accent-color);
+  // color: #ddd;
+  color: var(--white-text-color);
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
