@@ -173,12 +173,16 @@ $gradient: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
 
 .search-container {
   position: relative;
-
+display: flex;
   margin-top: 51px;
-  margin-right: auto;
+  margin-right: 0px;
   margin-left: auto;
   @media screen and (min-width: $tablet) {
     margin-top: 41px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
   }
 }
 //------------------------------------------------------
@@ -228,7 +232,7 @@ $border-width: 2.5px;
   }
   &.opened {
     .search-input {
-      width: 280px;
+      width: 230px;
       transition-delay: 0.6s;
       cursor: text;
       @media screen and (min-width: $tablet) {
@@ -252,11 +256,19 @@ $border-width: 2.5px;
 .library-btns-container {
   display: flex;
   margin-top: 61px;
-  margin-left: auto;
+  margin-left: 0px;
   margin-right: auto;
+
   @media screen and (min-width: $tablet) {
     margin-top: 51px;
+  margin-left: 0px;
+  margin-right: auto;
   }
+    @media screen and (min-width: $desktop) {
+        margin-left: 120px;
+        margin-right: auto;
+        }
+
 }
 .on-library-none {
   display: none;

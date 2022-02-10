@@ -44,19 +44,18 @@
 
 .switcher {
   position: absolute;
-  top: 90px;
-  right: 110px;
+  top: 45px;
+  left: 28px;
   display: flex;
-  width: 100px;
-  height: 100%;
+  width: 30px;
   background: #2a2c2d;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: inherit;
  @media screen and (min-width: $tablet) {
-     top: 40px;
-     right: 65px;
+      top: 50px;
+      left: 80px;
  }
 }
 
